@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, EB_Garamond } from "next/font/google";
 import "./globals.css";
-
+export const dynamic = "force-dynamic";
 // fonts are functions called with the settings object param
 const inter = Inter({
   subsets: ["latin"],
