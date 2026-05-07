@@ -110,9 +110,9 @@ function Hero() {
 //dont need do we? here?
 function About() {
   return (
-    <section className="snap-section flex flex-col md:flex-row" style={{ background: "#1B1B1B", color: "#F9F8F5" }}>
+    <section className="snap-section flex flex-col md:flex-row" style={{ background: "var(--color-about-bg)", color: "var(--color-about-ink)" }}>
       {/* Left — big label */}
-      <div className="flex items-center justify-center md:w-1/2 p-16 border-b md:border-b-0 md:border-r" style={{ borderColor: "#333" }}>
+      <div className="flex items-center justify-center md:w-1/2 p-16 border-b md:border-b-0 md:border-r" style={{ borderColor: "var(--color-about-ink)" }}>
         <h2 className="font-display uppercase leading-none" style={{ fontSize: "clamp(48px, 8vw, 120px)", letterSpacing: "-0.03em" }}>
           WHO
           <br />
@@ -124,23 +124,23 @@ function About() {
 
       {/* Right — text */}
       <div className="flex flex-col justify-center md:w-1/2 p-16 gap-8">
-        <p className="font-body text-xl leading-relaxed" style={{ color: "#C8C8C8" }}>
+        <p className="font-body text-xl leading-relaxed" style={{ color: "var(--color-about-ink)", opacity: 0.7 }}>
           It's A Secret Book Club is a monthly reading group for people who take books seriously. No gatekeeping. No pretension. Just good readers and honest conversation.
         </p>
-        <p className="font-body text-xl leading-relaxed" style={{ color: "#C8C8C8" }}>
+        <p className="font-body text-xl leading-relaxed" style={{ color: "var(--color-about-ink)", opacity: 0.7 }}>
           We meet in person in Dubai, keep groups small at 12 people maximum, and rotate through fiction that makes you think differently about the world.
         </p>
-        <div className="grid grid-cols-3 gap-6 pt-8 border-t" style={{ borderColor: "#333" }}>
+        <div className="grid grid-cols-3 gap-6 pt-8 border-t" style={{ borderColor: "var(--color-about-ink)" }}>
           {[
             { value: "12", label: "Members per session" },
             { value: "Monthly", label: "How often we meet" },
             { value: "Dubai", label: "Where we gather" },
           ].map(({ value, label }) => (
             <div key={label}>
-              <div className="font-display text-3xl md:text-4xl uppercase" style={{ color: "#F9F8F5" }}>
+              <div className="font-display text-3xl md:text-4xl uppercase" style={{ color: "var(--color-about-ink)" }}>
                 {value}
               </div>
-              <div className="font-body text-xs uppercase tracking-widest mt-1" style={{ color: "#666" }}>
+              <div className="font-body text-xs uppercase tracking-widest mt-1" style={{ color: "var(--color-about-ink)", opacity: 0.4 }}>
                 {label}
               </div>
             </div>
@@ -153,24 +153,32 @@ function About() {
 
 function CurrentBook() {
   return (
-    <section className="snap-section flex flex-col items-center justify-center text-center px-8 md:px-24" style={{ background: "#FFF9C4", color: "#1A1800" }}>
-      <p className="font-body text-xs uppercase tracking-[0.4em] mb-8 opacity-60">Currently reading</p>
+    <section className="snap-section flex flex-col items-center justify-center text-center px-8 md:px-24" style={{ background: "var(--color-currentbook-bg)", color: "var(--color-currentbook-ink)" }}>
+      <p className="font-body text-xs uppercase tracking-[0.4em] mb-8 opacity-60" style={{ color: "var(--color-currentbook-ink)", opacity: 0.6 }}>
+        Currently reading
+      </p>
       <h2 className="font-display uppercase leading-none mb-4" style={{ fontSize: "clamp(48px, 10vw, 140px)", letterSpacing: "-0.03em" }}>
         {CURRENT_BOOK.title}
       </h2>
-      <p className="font-body text-xl mb-8 opacity-70">by {CURRENT_BOOK.author}</p>
-      <p className="font-body text-lg md:text-xl max-w-lg leading-relaxed mb-10 opacity-80">{CURRENT_BOOK.description}</p>
-      <p className="font-body text-sm uppercase tracking-[0.2em] opacity-60">{CURRENT_BOOK.meeting}</p>
+      <p className="font-body text-xl mb-8 opacity-70" style={{ color: "var(--color-currentbook-ink)", opacity: 0.7 }}>
+        by {CURRENT_BOOK.author}
+      </p>
+      <p className="font-body text-lg md:text-xl max-w-lg leading-relaxed mb-10 opacity-80" style={{ color: "var(--color-currentbook-ink)", opacity: 0.8 }}>
+        {CURRENT_BOOK.description}
+      </p>
+      <p className="font-body text-sm uppercase tracking-[0.2em] opacity-60" style={{ color: "var(--color-currentbook-ink)", opacity: 0.6 }}>
+        {CURRENT_BOOK.meeting}
+      </p>
     </section>
   );
 }
 
 function Events() {
   return (
-    <section className="snap-section flex flex-col" style={{ background: "#F9F8F5", color: "#0A0A0A" }}>
+    <section className="snap-section flex flex-col" style={{ background: "var(--color-events-bg)", color: "var(--color-events-ink)" }}>
       {/* Section header */}
-      <div className="px-8 md:px-16 pt-16 pb-8 border-b" style={{ borderColor: "#E0E0E0" }}>
-        <p className="font-body text-xs uppercase tracking-[0.4em] mb-4 opacity-50">What's coming up</p>
+      <div className="px-8 md:px-16 pt-16 pb-8 border-b" style={{ borderColor: "var(--color-events-ink)" }}>
+        <p className="font-body text-xs uppercase tracking-[0.4em] mb-4">What's coming up</p>
         <h2 className="font-display uppercase leading-none" style={{ fontSize: "clamp(40px, 7vw, 100px)", letterSpacing: "-0.03em" }}>
           Upcoming
           <br />
@@ -192,7 +200,9 @@ function Events() {
         ))}
       </div>
 
-      <p className="px-8 md:px-16 pb-8 font-body text-xs uppercase tracking-widest opacity-40">Swipe to see more →</p>
+      <p className="px-8 md:px-16 pb-8 font-body text-xs uppercase tracking-widest opacity-40" style={{ color: "var(--color-events-ink)", opacity: 0.4 }}>
+        Swipe to see more →
+      </p>
     </section>
   );
 }
@@ -253,16 +263,20 @@ function EventTicket({ event, swatchIndex }: { event: (typeof EVENTS)[0]; swatch
 
 function Join() {
   return (
-    <section id="join" className="snap-section flex flex-col md:flex-row" style={{ background: "#9C27B0", color: "#FAF0FF" }}>
+    <section id="join" className="snap-section flex flex-col md:flex-row" style={{ background: "var(--color-join-bg)", color: "var(--color-join-ink)" }}>
       {/* Left */}
-      <div className="flex flex-col justify-center md:w-1/2 p-16 border-b md:border-b-0 md:border-r" style={{ borderColor: "#7B1FA2" }}>
-        <p className="font-body text-xs uppercase tracking-[0.4em] mb-6 opacity-70">Membership</p>
-        <h2 className="font-display uppercase leading-none mb-8" style={{ fontSize: "clamp(48px, 7vw, 100px)", letterSpacing: "-0.03em" }}>
+      <div className="flex flex-col justify-center md:w-1/2 p-16 border-b md:border-b-0 md:border-r" style={{ borderColor: "var(--color-join-ink)" }}>
+        <p className="font-body text-xs uppercase tracking-[0.4em] mb-6 opacity-70" style={{ color: "var(--color-join-ink)", opacity: 0.7 }}>
+          Membership
+        </p>
+        <h2 className="font-display uppercase leading-none mb-8" style={{ color: "var(--color-join-ink)", opacity: 0.8, fontSize: "clamp(48px, 7vw, 100px)", letterSpacing: "-0.03em" }}>
           WANT
           <br />
           IN?
         </h2>
-        <p className="font-body text-lg leading-relaxed opacity-80 max-w-sm">Sessions are free. Spots are limited to 12. Tell us a little about yourself and the book that changed you.</p>
+        <p className="font-body text-lg leading-relaxed opacity-80 max-w-sm" style={{ color: "var(--color-join-ink)", opacity: 0.8 }}>
+          Sessions are free. Spots are limited to 12. Tell us a little about yourself and the book that changed you.
+        </p>
       </div>
 
       {/* Right — form */}
@@ -273,7 +287,10 @@ function Join() {
 
 function Footer() {
   return (
-    <footer className="py-10 px-8 md:px-16 flex flex-col md:flex-row justify-between items-center gap-4 border-t" style={{ background: "#F9F8F5", borderColor: "#E0E0E0", color: "#0A0A0A" }}>
+    <footer
+      className="py-10 px-8 md:px-16 flex flex-col md:flex-row justify-between items-center gap-4 border-t"
+      style={{ background: "var(--color-footer-bg)", color: "var(--color-footer-ink)", borderColor: "var(--color-footer-ink)" }}
+    >
       <span className="font-display text-lg uppercase tracking-tight">It's A Secret Book Club</span>
       <p className="font-body text-xs uppercase tracking-widest opacity-40">Dubai · {new Date().getFullYear()}</p>
 

@@ -29,29 +29,43 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           dangerouslySetInnerHTML={{
             __html: `
-      (function() {
-        var swatches = [
-          { bg: '#E63946', ink: '#FFF9F9' },
-          { bg: '#2196F3', ink: '#F0F8FF' },
-          { bg: '#FF9800', ink: '#1A0A00' },
-          { bg: '#9C27B0', ink: '#FAF0FF' },
-          { bg: '#4CAF50', ink: '#F0FFF0' },
-          { bg: '#FF4081', ink: '#FFF0F5' },
-          { bg: '#00BCD4', ink: '#F0FEFF' },
-          { bg: '#FFEB3B', ink: '#1A1800' },
-          { bg: '#FF5722', ink: '#FFF5F0' },
-          { bg: '#3F51B5', ink: '#F0F2FF' },
-          { bg: '#F8BBD0', ink: '#1A0A0F' },
-          { bg: '#B2EBF2', ink: '#0A1A1C' },
-          { bg: '#1B1B1B', ink: '#F9F8F5' },
-          { bg: '#FFF9C4', ink: '#1A1800' },
-          { bg: '#E8F5E9', ink: '#0A1A0F' },
-        ];
-        var pick = swatches[Math.floor(Math.random() * swatches.length)];
-        document.documentElement.style.setProperty('--color-hero-bg', pick.bg);
-        document.documentElement.style.setProperty('--color-hero-ink', pick.ink);
-      })();
-    `,
+  (function() {
+    var swatches = [
+      { bg: '#E63946', ink: '#FFFFFF' },
+      { bg: '#2196F3', ink: '#FFFFFF' },
+      { bg: '#FF9800', ink: '#000000' },
+      { bg: '#9C27B0', ink: '#FFFFFF' },
+      { bg: '#4CAF50', ink: '#000000' },
+      { bg: '#FF4081', ink: '#FFFFFF' },
+      { bg: '#00BCD4', ink: '#000000' },
+      { bg: '#FFEB3B', ink: '#000000' },
+      { bg: '#FF5722', ink: '#FFFFFF' },
+      { bg: '#3F51B5', ink: '#FFFFFF' },
+      { bg: '#F8BBD0', ink: '#000000' },
+      { bg: '#B2EBF2', ink: '#000000' },
+      { bg: '#1B1B1B', ink: '#FFFFFF' },
+      { bg: '#FFF9C4', ink: '#000000' },
+      { bg: '#E8F5E9', ink: '#000000' },
+      { bg: '#D32F2F', ink: '#FFFFFF' },
+      { bg: '#1565C0', ink: '#FFFFFF' },
+      { bg: '#2E7D32', ink: '#FFFFFF' },
+      { bg: '#F57F17', ink: '#000000' },
+      { bg: '#AD1457', ink: '#FFFFFF' },
+    ];
+
+    function pick() {
+      return swatches[Math.floor(Math.random() * swatches.length)];
+    }
+
+    var sections = ['hero', 'about', 'currentbook', 'events', 'join', 'footer'];
+
+    sections.forEach(function(section) {
+      var swatch = pick();
+      document.documentElement.style.setProperty('--color-' + section + '-bg', swatch.bg);
+      document.documentElement.style.setProperty('--color-' + section + '-ink', swatch.ink);
+    });
+  })();
+`,
           }}
         />
       </head>

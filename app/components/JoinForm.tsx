@@ -35,8 +35,8 @@ export default function JoinForm() {
   };
 
   const fieldStyle = {
-    borderColor: "#FAF0FF",
-    color: "#FAF0FF",
+    borderColor: "var(--color-join-ink)",
+    color: "var(--color-join-ink)",
   };
 
   const inputClass = "w-full bg-transparent border-b-2 py-4 font-body text-lg outline-none placeholder:opacity-50 transition-all duration-200";
@@ -44,14 +44,14 @@ export default function JoinForm() {
   if (status === "success") {
     return (
       <div className="flex flex-col justify-center md:w-1/2 p-16 gap-4">
-        <h3 className="font-display uppercase text-4xl leading-none" style={{ color: "#FAF0FF" }}>
+        <h3 className="font-display uppercase text-4xl leading-none" style={{ color: "var(--color-join-ink)" }}>
           YOU'RE
           <br />
           ON THE
           <br />
           LIST.
         </h3>
-        <p className="font-body text-lg opacity-70" style={{ color: "#FAF0FF" }}>
+        <p className="font-body text-lg opacity-70" style={{ color: "var(--color-join-ink)" }}>
           We'll be in touch before the next session.
         </p>
       </div>
@@ -74,7 +74,7 @@ export default function JoinForm() {
       />
 
       {status === "error" && (
-        <p className="font-body text-sm opacity-70" style={{ color: "#FAF0FF" }}>
+        <p className="font-body text-sm opacity-70" style={{ color: "var(--color-join-ink)" }}>
           Something went wrong. Try again.
         </p>
       )}
@@ -83,7 +83,7 @@ export default function JoinForm() {
         type="submit"
         disabled={status === "loading"}
         className="mt-4 font-display uppercase text-sm tracking-[0.2em] px-10 py-5 border-2 hover:opacity-70 transition-opacity duration-300 w-fit disabled:opacity-40"
-        style={{ borderColor: "#FAF0FF", color: "#FAF0FF" }}
+        style={{ borderColor: "var(--color-join-ink)", color: "var(--color-join-ink)" }}
       >
         {status === "loading" ? "Sending..." : "Apply to join"}
       </button>
