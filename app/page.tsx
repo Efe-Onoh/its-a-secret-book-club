@@ -116,7 +116,7 @@ function Hero() {
       >
         IT'S A SECRET BOOK CLUB
       </h1>
-      <p className="font-body text-lg md:text-xl max-w-md opacity-80">We meet monthly. We read seriously. We don't tell everyone.</p>
+      <p className="font-body text-sm md:text-xl max-w-1/2 opacity-80">We meet monthly. We read seriously. We don't tell everyone.</p>
     </section>
   );
 }
