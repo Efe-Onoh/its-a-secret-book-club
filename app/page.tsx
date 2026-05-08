@@ -1,5 +1,6 @@
 import { Inter, EB_Garamond } from "next/font/google";
 import JoinForm from "./components/JoinForm";
+import About from "./components/About";
 const inter = Inter({ subsets: ["latin"], weight: ["900"], variable: "--font-display" });
 const garamond = EB_Garamond({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-body" });
 
@@ -122,48 +123,48 @@ function Hero() {
 }
 
 //dont need do we? here?
-function About() {
-  return (
-    <section className="snap-section flex flex-col md:flex-row" style={{ background: "var(--color-about-bg)", color: "var(--color-about-ink)" }}>
-      {/* Left — big label */}
-      <div className="flex items-center justify-center md:w-1/2 p-16 border-b md:border-b-0 md:border-r" style={{ borderColor: "var(--color-about-ink)" }}>
-        <h2 className="font-display uppercase leading-none" style={{ fontSize: "clamp(48px, 8vw, 120px)", letterSpacing: "-0.03em" }}>
-          WHO
-          <br />
-          WE
-          <br />
-          ARE
-        </h2>
-      </div>
+// function About() {
+//   return (
+//     <section className="snap-section flex flex-col md:flex-row" style={{ background: "var(--color-about-bg)", color: "var(--color-about-ink)" }}>
+//       {/* Left — big label */}
+//       <div className="flex items-center justify-center md:w-1/2 p-16 border-b md:border-b-0 md:border-r" style={{ borderColor: "var(--color-about-ink)" }}>
+//         <h2 className="font-display uppercase leading-none" style={{ fontSize: "clamp(48px, 8vw, 120px)", letterSpacing: "-0.03em" }}>
+//           WHO
+//           <br />
+//           WE
+//           <br />
+//           ARE
+//         </h2>
+//       </div>
 
-      {/* Right — text */}
-      <div className="flex flex-col justify-center md:w-1/2 p-16 gap-8">
-        <p className="font-body text-xl leading-relaxed" style={{ color: "var(--color-about-ink)", opacity: 0.7 }}>
-          It's A Secret Book Club is a monthly reading group for people who take books seriously. No gatekeeping. No pretension. Just good readers and honest conversation.
-        </p>
-        <p className="font-body text-xl leading-relaxed" style={{ color: "var(--color-about-ink)", opacity: 0.7 }}>
-          We meet in person in Dubai, keep groups small at 12 people maximum, and rotate through fiction that makes you think differently about the world.
-        </p>
-        <div className="grid grid-cols-3 gap-6 pt-8 border-t" style={{ borderColor: "var(--color-about-ink)" }}>
-          {[
-            { value: "12", label: "Members per session" },
-            { value: "Monthly", label: "How often we meet" },
-            { value: "Dubai", label: "Where we gather" },
-          ].map(({ value, label }) => (
-            <div key={label}>
-              <div className="font-display text-3xl md:text-4xl uppercase" style={{ color: "var(--color-about-ink)" }}>
-                {value}
-              </div>
-              <div className="font-body text-xs uppercase tracking-widest mt-1" style={{ color: "var(--color-about-ink)", opacity: 0.4 }}>
-                {label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+//       {/* Right — text */}
+//       <div className="flex flex-col justify-center md:w-1/2 p-16 gap-8">
+//         <p className="font-body text-xl leading-relaxed" style={{ color: "var(--color-about-ink)", opacity: 0.7 }}>
+//           It's A Secret Book Club is a monthly reading group for people who take books seriously. No gatekeeping. No pretension. Just good readers and honest conversation.
+//         </p>
+//         <p className="font-body text-xl leading-relaxed" style={{ color: "var(--color-about-ink)", opacity: 0.7 }}>
+//           We meet in person in Dubai, keep groups small at 12 people maximum, and rotate through fiction that makes you think differently about the world.
+//         </p>
+//         <div className="grid grid-cols-3 gap-6 pt-8 border-t" style={{ borderColor: "var(--color-about-ink)" }}>
+//           {[
+//             { value: "12", label: "Members per session" },
+//             { value: "Monthly", label: "How often we meet" },
+//             { value: "Dubai", label: "Where we gather" },
+//           ].map(({ value, label }) => (
+//             <div key={label}>
+//               <div className="font-display text-3xl md:text-4xl uppercase" style={{ color: "var(--color-about-ink)" }}>
+//                 {value}
+//               </div>
+//               <div className="font-body text-xs uppercase tracking-widest mt-1" style={{ color: "var(--color-about-ink)", opacity: 0.4 }}>
+//                 {label}
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
 function CurrentBook() {
   return (
