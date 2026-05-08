@@ -104,11 +104,11 @@ function Hero() {
     //     <div className="w-px h-10" style={{ background: "var(--color-hero-ink)" }} />
     //   </div>
     // </section>
-    <section className="snap-section flex items-center justify-center overflow-hidden" style={{ background: "var(--color-hero-bg)" }}>
+    <section className="snap-section flex flex-col gap-8 items-center justify-center text-center overflow-hidden" style={{ background: "var(--color-hero-bg)", color: "var(--color-hero-ink)" }}>
       <h1
         className="font-display uppercase text-center leading-none w-full px-4"
         style={{
-          fontSize: "clamp(80px, min(25vh,22vw), 320px)",
+          fontSize: "clamp(80px, min(25vh,20vw), 320px)",
           letterSpacing: "-0.04em",
           color: "var(--color-hero-ink)",
           wordBreak: "break-word",
@@ -116,6 +116,7 @@ function Hero() {
       >
         IT'S A SECRET BOOK CLUB
       </h1>
+      <p className="font-body text-lg md:text-xl max-w-md opacity-80">We meet monthly. We read seriously. We don't tell everyone.</p>
     </section>
   );
 }
