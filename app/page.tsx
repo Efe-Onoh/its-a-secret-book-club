@@ -108,7 +108,7 @@ function Hero() {
       <h1
         className="font-display uppercase text-center leading-none w-full px-4"
         style={{
-          fontSize: "clamp(80px, min(25vh,20vw), 320px)",
+          fontSize: "clamp(40px, min(25vh,20vw), 320px)",
           letterSpacing: "-0.04em",
           color: "var(--color-hero-ink)",
           wordBreak: "break-word",
