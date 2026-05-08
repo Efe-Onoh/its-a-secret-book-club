@@ -78,31 +78,44 @@ export default function Home() {
 
 function Hero() {
   return (
-    <section className="snap-section flex flex-col items-center justify-center text-center px-8 relative" style={{ background: "var(--color-hero-bg)", color: "var(--color-hero-ink)" }}>
-      <p className="font-body text-sm uppercase tracking-[0.4em] mb-6 opacity-70">Dubai · Est. 2024</p>
-      <h1 className="font-display uppercase leading-none mb-8" style={{ fontSize: "clamp(60px, 14vw, 180px)", letterSpacing: "-0.03em" }}>
-        IT'S A<br />
-        SECRET
-        <br />
-        BOOK
-        <br />
-        CLUB
-      </h1>
-      <p className="font-body text-lg md:text-xl max-w-md opacity-80 mb-12">We meet monthly. We read seriously. We don't tell everyone.</p>
+    // <section className="snap-section flex flex-col items-center justify-center text-center px-8 relative" style={{ background: "var(--color-hero-bg)", color: "var(--color-hero-ink)" }}>
+    //   <p className="font-body text-sm uppercase tracking-[0.4em] mb-6 opacity-70">Dubai · Est. 2024</p>
+    //   <h1 className="font-display uppercase leading-none mb-8" style={{ fontSize: "clamp(60px, 14vw, 180px)", letterSpacing: "-0.03em" }}>
+    //     IT'S A<br />
+    //     SECRET
+    //     <br />
+    //     BOOK
+    //     <br />
+    //     CLUB
+    //   </h1>
+    //   <p className="font-body text-lg md:text-xl max-w-md opacity-80 mb-12">We meet monthly. We read seriously. We don't tell everyone.</p>
 
-      <a
-        href="#join"
-        className="font-display uppercase text-sm tracking-[0.2em] px-10 py-5 border-2 hover:opacity-70 transition-opacity duration-300 no-underline"
-        style={{ borderColor: "var(--color-hero-ink)", color: "var(--color-hero-ink)" }}
+    //   <a
+    //     href="#join"
+    //     className="font-display uppercase text-sm tracking-[0.2em] px-10 py-5 border-2 hover:opacity-70 transition-opacity duration-300 no-underline"
+    //     style={{ borderColor: "var(--color-hero-ink)", color: "var(--color-hero-ink)" }}
+    //   >
+    //     Apply to join
+    //   </a>
+
+    //   {/* Scroll hint */}
+    //   <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+    //     <span className="font-body text-[10px] uppercase tracking-[0.3em]">Scroll</span>
+    //     <div className="w-px h-10" style={{ background: "var(--color-hero-ink)" }} />
+    //   </div>
+    // </section>
+    <section className="snap-section flex items-center justify-center overflow-hidden" style={{ background: "var(--color-hero-bg)" }}>
+      <h1
+        className="font-display uppercase text-center leading-none w-full px-4"
+        style={{
+          fontSize: "clamp(80px, min(25vh,22vw), 320px)",
+          letterSpacing: "-0.04em",
+          color: "var(--color-hero-ink)",
+          wordBreak: "break-word",
+        }}
       >
-        Apply to join
-      </a>
-
-      {/* Scroll hint */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
-        <span className="font-body text-[10px] uppercase tracking-[0.3em]">Scroll</span>
-        <div className="w-px h-10" style={{ background: "var(--color-hero-ink)" }} />
-      </div>
+        IT'S A SECRET BOOK CLUB
+      </h1>
     </section>
   );
 }
