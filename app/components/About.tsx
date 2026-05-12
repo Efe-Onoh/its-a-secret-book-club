@@ -102,13 +102,13 @@ export default function About() {
             color: "var(--color-about-ink)",
           }}
         >
-          <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto text-center">
+          <div className="flex flex-col gap-12 max-w-3xl mx-auto text-center">
             {[
               { value: "12", label: "Members per session" },
               { value: "Monthly", label: "How often we meet" },
               { value: "Dubai", label: "Where we gather" },
             ].map(({ value, label }) => (
-              <div key={label} className="flex flex-col gap-3">
+              <div key={label} className="flex flex-col gap-2">
                 <span className="font-display uppercase leading-none" style={{ fontSize: "clamp(48px, 10vw, 120px)", letterSpacing: "-0.03em" }}>
                   {value}
                 </span>
