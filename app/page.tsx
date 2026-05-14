@@ -1,6 +1,7 @@
 import { Inter, EB_Garamond } from "next/font/google";
 import JoinForm from "./components/JoinForm";
 import About from "./components/About";
+import Events from "./components/Events";
 const inter = Inter({ subsets: ["latin"], weight: ["900"], variable: "--font-display" });
 const garamond = EB_Garamond({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-body" });
 
@@ -23,40 +24,187 @@ const SWATCHES = [
   { bg: "#FFF9C4", ink: "#1A1800" },
   { bg: "#E8F5E9", ink: "#0A1A0F" },
 ];
-
+// const EVENTS = [
+//   {
+//     id: "e1",
+//     title: "The Midnight Library",
+//     author: "Matt Haig",
+//     isbn: "9780525559474",
+//     date: "Friday 17 May 2025",
+//     time: "7:00 PM",
+//     location: "Alserkal Avenue, Dubai",
+//     spots: 12,
+//     description: "A story about all the lives we ever dreamed of living.",
+//   },
+//   {
+//     id: "e2",
+//     title: "Yellowface",
+//     author: "R.F. Kuang",
+//     isbn: "9780063250994",
+//     date: "Friday 7 June 2025",
+//     time: "7:00 PM",
+//     location: "Alserkal Avenue, Dubai",
+//     spots: 12,
+//     description: "Publishing, identity, and who gets to tell whose story.",
+//   },
+//   {
+//     id: "e3",
+//     title: "Tomorrow, and Tomorrow, and Tomorrow",
+//     author: "Gabrielle Zevin",
+//     isbn: "9780593321201",
+//     date: "Friday 4 July 2025",
+//     time: "7:00 PM",
+//     location: "Alserkal Avenue, Dubai",
+//     spots: 12,
+//     description: "Love, creativity, and what it means to make something.",
+//   },
+//   {
+//     id: "e4",
+//     title: "Demon Copperhead",
+//     author: "Barbara Kingsolver",
+//     isbn: "9780063251922",
+//     date: "Friday 1 August 2025",
+//     time: "7:00 PM",
+//     location: "Alserkal Avenue, Dubai",
+//     spots: 12,
+//     description: "A modern Dickens set in Appalachia. Devastating and necessary.",
+//   },
+//   {
+//     id: "e5",
+//     title: "The Covenant of Water",
+//     author: "Abraham Verghese",
+//     isbn: "9780802162175",
+//     date: "Friday 5 September 2025",
+//     time: "7:00 PM",
+//     location: "Alserkal Avenue, Dubai",
+//     spots: 12,
+//     description: "Three generations of a South Indian family. Vast, warm, unforgettable.",
+//   },
+//   {
+//     id: "e6",
+//     title: "James",
+//     author: "Percival Everett",
+//     isbn: "9780385550888",
+//     date: "Friday 3 October 2025",
+//     time: "7:00 PM",
+//     location: "Alserkal Avenue, Dubai",
+//     spots: 12,
+//     description: "Huckleberry Finn retold from Jim's perspective. Brilliant and overdue.",
+//   },
+// ];
 const EVENTS = [
   {
     id: "e1",
-    title: "The Midnight Library",
-    author: "Matt Haig",
-    date: "Friday 17 May 2025",
+    title: "Girl on Girl",
+    author: "Sophie Gilbert",
+    isbn: "9780593656297",
+    date: "Friday 5 June 2026",
     time: "7:00 PM",
     location: "Alserkal Avenue, Dubai",
     spots: 12,
-    description: "A story about all the lives we ever dreamed of living. Come ready to talk about regret, choice, and second chances.",
+    description: "A blazing critique of how early-aughts pop culture turned women against themselves.",
   },
   {
     id: "e2",
-    title: "Yellowface",
-    author: "R.F. Kuang",
-    date: "Friday 7 June 2025",
+    title: "Penance",
+    author: "Eliza Clark",
+    isbn: "9780063327856",
+    date: "Friday 3 July 2026",
     time: "7:00 PM",
     location: "Alserkal Avenue, Dubai",
     spots: 12,
-    description: "Publishing, identity, and who gets to tell whose story. A sharp, uncomfortable, necessary read.",
+    description: "A chilling story of murder among teenage girls. Unputdownable.",
   },
   {
     id: "e3",
+    title: "Margo's Got Money Troubles",
+    author: "Rufi Thorpe",
+    isbn: "9781399732512",
+    date: "Friday 7 August 2026",
+    time: "7:00 PM",
+    location: "Alserkal Avenue, Dubai",
+    spots: 12,
+    description: "Blisteringly funny. A young mother's wildly original fight to make it.",
+  },
+  {
+    id: "e4",
+    title: "Women, Race & Class",
+    author: "Angela Y. Davis",
+    isbn: "0394713516",
+    date: "Friday 4 September 2026",
+    time: "7:00 PM",
+    location: "Alserkal Avenue, Dubai",
+    spots: 12,
+    description: "The landmark text on intersectionality. Essential reading.",
+  },
+  {
+    id: "e5",
     title: "Tomorrow, and Tomorrow, and Tomorrow",
     author: "Gabrielle Zevin",
-    date: "Friday 4 July 2025",
+    isbn: "9780593321201",
+    date: "Friday 2 October 2026",
     time: "7:00 PM",
     location: "Alserkal Avenue, Dubai",
     spots: 12,
     description: "Love, creativity, and what it means to make something. One of the best novels of the decade.",
   },
+  {
+    id: "e6",
+    title: "Yellowface",
+    author: "R.F. Kuang",
+    isbn: "9780063250864",
+    date: "Friday 6 November 2026",
+    time: "7:00 PM",
+    location: "Alserkal Avenue, Dubai",
+    spots: 12,
+    description: "Publishing, identity, and who gets to tell whose story.",
+  },
+  // Reserve pool — not displayed, available to swap in
+  {
+    id: "e7",
+    title: "The Midnight Library",
+    author: "Matt Haig",
+    isbn: "9780525559474",
+    date: "Friday 4 December 2026",
+    time: "7:00 PM",
+    location: "Alserkal Avenue, Dubai",
+    spots: 12,
+    description: "A story about all the lives we ever dreamed of living.",
+  },
+  {
+    id: "e8",
+    title: "Demon Copperhead",
+    author: "Barbara Kingsolver",
+    isbn: "9780063251922",
+    date: "Friday 1 January 2027",
+    time: "7:00 PM",
+    location: "Alserkal Avenue, Dubai",
+    spots: 12,
+    description: "A modern Dickens set in Appalachia. Devastating and necessary.",
+  },
+  {
+    id: "e9",
+    title: "The Covenant of Water",
+    author: "Abraham Verghese",
+    isbn: "9780802162175",
+    date: "Friday 5 February 2027",
+    time: "7:00 PM",
+    location: "Alserkal Avenue, Dubai",
+    spots: 12,
+    description: "Three generations of a South Indian family. Vast, warm, unforgettable.",
+  },
+  {
+    id: "e10",
+    title: "James",
+    author: "Percival Everett",
+    isbn: "9780385550369",
+    date: "Friday 5 March 2027",
+    time: "7:00 PM",
+    location: "Alserkal Avenue, Dubai",
+    spots: 12,
+    description: "Huckleberry Finn retold from Jim's perspective. Brilliant and overdue.",
+  },
 ];
-
 const CURRENT_BOOK = {
   title: "The Vegetarian",
   author: "Han Kang",
@@ -70,7 +218,7 @@ export default function Home() {
       <Hero />
       <About />
       <CurrentBook />
-      <Events />
+      <Events events={EVENTS.slice(0, 6)} />
       <Join />
       <Footer />
     </main>
@@ -79,32 +227,6 @@ export default function Home() {
 
 function Hero() {
   return (
-    // <section className="snap-section flex flex-col items-center justify-center text-center px-8 relative" style={{ background: "var(--color-hero-bg)", color: "var(--color-hero-ink)" }}>
-    //   <p className="font-body text-sm uppercase tracking-[0.4em] mb-6 opacity-70">Dubai · Est. 2024</p>
-    //   <h1 className="font-display uppercase leading-none mb-8" style={{ fontSize: "clamp(60px, 14vw, 180px)", letterSpacing: "-0.03em" }}>
-    //     IT'S A<br />
-    //     SECRET
-    //     <br />
-    //     BOOK
-    //     <br />
-    //     CLUB
-    //   </h1>
-    //   <p className="font-body text-lg md:text-xl max-w-md opacity-80 mb-12">We meet monthly. We read seriously. We don't tell everyone.</p>
-
-    //   <a
-    //     href="#join"
-    //     className="font-display uppercase text-sm tracking-[0.2em] px-10 py-5 border-2 hover:opacity-70 transition-opacity duration-300 no-underline"
-    //     style={{ borderColor: "var(--color-hero-ink)", color: "var(--color-hero-ink)" }}
-    //   >
-    //     Apply to join
-    //   </a>
-
-    //   {/* Scroll hint */}
-    //   <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
-    //     <span className="font-body text-[10px] uppercase tracking-[0.3em]">Scroll</span>
-    //     <div className="w-px h-10" style={{ background: "var(--color-hero-ink)" }} />
-    //   </div>
-    // </section>
     <section className="snap-section flex flex-col gap-8 items-center justify-center text-center overflow-hidden" style={{ background: "var(--color-hero-bg)", color: "var(--color-hero-ink)" }}>
       <h1
         className="font-display uppercase text-center leading-none w-full px-4"
@@ -185,94 +307,6 @@ function CurrentBook() {
         {CURRENT_BOOK.meeting}
       </p>
     </section>
-  );
-}
-
-function Events() {
-  return (
-    <section className="snap-section flex flex-col" style={{ background: "var(--color-events-bg)", color: "var(--color-events-ink)" }}>
-      {/* Section header */}
-      <div className="px-8 md:px-16 pt-16 pb-8 border-b" style={{ borderColor: "var(--color-events-ink)" }}>
-        <p className="font-body text-xs uppercase tracking-[0.4em] mb-4">What's coming up</p>
-        <h2 className="font-display uppercase leading-none" style={{ fontSize: "clamp(40px, 7vw, 100px)", letterSpacing: "-0.03em" }}>
-          Upcoming
-          <br />
-          Events
-        </h2>
-      </div>
-
-      {/* Horizontal scrolling ticket cards */}
-      <div
-        className="flex gap-6 px-8 md:px-16 py-12 overflow-x-auto"
-        style={{
-          scrollSnapType: "x mandatory",
-          WebkitOverflowScrolling: "touch",
-          scrollbarWidth: "none",
-        }}
-      >
-        {EVENTS.map((event, i) => (
-          <EventTicket key={event.id} event={event} swatchIndex={i} />
-        ))}
-      </div>
-
-      <p className="px-8 md:px-16 pb-8 font-body text-xs uppercase tracking-widest opacity-40" style={{ color: "var(--color-events-ink)", opacity: 0.4 }}>
-        Swipe to see more →
-      </p>
-    </section>
-  );
-}
-
-// EventTicket — styled like a physical event ticket
-// Each card gets a different swatch colour
-//tickets are literally physical ux ticket, white, with the dotted line for tear off style
-//rectangular not square, like voucher for internet. dotted circles are vertical
-//at the beginning and in the square before the dotted line its an image
-// these slide in from left and right one after the other to the
-// center of the section to be stacked there in rows as the page scrolls
-function EventTicket({ event, swatchIndex }: { event: (typeof EVENTS)[0]; swatchIndex: number }) {
-  const swatch = SWATCHES[swatchIndex % SWATCHES.length];
-
-  return (
-    <div
-      className="flex-shrink-0 flex flex-col rounded-none border-2"
-      style={{
-        width: "clamp(280px, 38vw, 420px)",
-        scrollSnapAlign: "start",
-        borderColor: swatch.bg,
-        minHeight: "420px",
-      }}
-    >
-      {/* Ticket top — coloured */}
-      <div className="flex flex-col gap-2 p-8 flex-1" style={{ background: swatch.bg, color: swatch.ink }}>
-        <p className="font-body text-xs uppercase tracking-[0.3em] opacity-70">
-          {event.date} · {event.time}
-        </p>
-        <h3 className="font-display uppercase leading-none mt-2" style={{ fontSize: "clamp(24px, 3vw, 40px)", letterSpacing: "-0.02em" }}>
-          {event.title}
-        </h3>
-        <p className="font-body text-sm opacity-80 mt-1">by {event.author}</p>
-        <p className="font-body text-sm leading-relaxed mt-4 opacity-75 flex-1">{event.description}</p>
-      </div>
-
-      {/* Ticket divider — perforated line effect */}
-      <div className="flex items-center gap-0 px-4 py-3 border-t-2 border-dashed" style={{ borderColor: swatch.bg, background: "#F9F8F5" }}>
-        <div className="w-4 h-4 rounded-full -ml-6 border-2" style={{ background: "#F9F8F5", borderColor: swatch.bg }} />
-        <div className="flex-1" />
-        <div className="w-4 h-4 rounded-full -mr-6 border-2" style={{ background: "#F9F8F5", borderColor: swatch.bg }} />
-      </div>
-
-      {/* Ticket bottom — white, booking info */}
-      <div className="flex items-center justify-between px-8 py-6" style={{ background: "#F9F8F5" }}>
-        <div>
-          <p className="font-body text-xs uppercase tracking-widest opacity-50 mb-1">Location</p>
-          <p className="font-body text-sm font-medium">{event.location}</p>
-        </div>
-        <div className="text-right">
-          <p className="font-body text-xs uppercase tracking-widest opacity-50 mb-1">Spots</p>
-          <p className="font-body text-sm font-medium">{event.spots} available</p>
-        </div>
-      </div>
-    </div>
   );
 }
 
