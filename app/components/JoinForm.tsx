@@ -39,7 +39,7 @@ export default function JoinForm() {
     color: "var(--color-join-ink)",
   };
 
-  const inputClass = "w-full bg-transparent border-b-2 py-4 font-body text-lg outline-none placeholder:opacity-50 transition-all duration-200";
+  const inputClass = "w-full bg-transparent border-b-2 py-2 font-body text-lg outline-none placeholder:opacity-50 transition-all duration-200";
 
   if (status === "success") {
     return (
@@ -59,7 +59,7 @@ export default function JoinForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col justify-center md:w-1/2 p-16 gap-5">
+    <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center w-full md:w-2/3 p-16 gap-5">
       <input type="text" placeholder="Your name" value={name} onChange={(e) => setName(e.target.value)} required className={inputClass} style={fieldStyle} />
       <input type="email" placeholder="Email address" value={email} onChange={(e) => setEmail(e.target.value)} required className={inputClass} style={fieldStyle} />
       <input type="tel" placeholder="WhatsApp number" value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} required className={inputClass} style={fieldStyle} />
@@ -82,7 +82,7 @@ export default function JoinForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full mt-4 font-display uppercase px-10 py-5 rounded-full border-2 transition-opacity duration-300 hover:opacity-70 disabled:opacity-40 disabled:cursor-not-allowed"
+        className="md:w-1/2 mt-4 font-display uppercase px-10 py-5 rounded-full border-2 transition-opacity duration-300 hover:opacity-70 disabled:opacity-40 disabled:cursor-not-allowed"
         style={{
           fontSize: "clamp(16px, 2vw, 24px)",
           letterSpacing: "-0.01em",
