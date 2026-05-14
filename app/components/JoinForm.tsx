@@ -82,9 +82,9 @@ export default function JoinForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="md:w-1/2 mt-4 font-display uppercase px-10 py-5 rounded-full border-2 transition-opacity duration-300 hover:opacity-70 disabled:opacity-40 disabled:cursor-not-allowed"
+        className="w-full md:w-1/2 mt-4 font-display uppercase px-10 py-10 rounded-full border-2 transition-opacity duration-300 hover:opacity-70 disabled:opacity-40 disabled:cursor-not-allowed"
         style={{
-          fontSize: "clamp(16px, 2vw, 24px)",
+          fontSize: "clamp(20px, 5vw, 30px)",
           letterSpacing: "-0.01em",
           borderColor: "var(--color-join-ink)",
           color: "var(--color-join-ink)",
