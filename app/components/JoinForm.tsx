@@ -59,7 +59,7 @@ export default function JoinForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center w-full md:w-2/3 p-16 gap-5">
+    <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center w-full md:w-2/3 gap-5">
       <input type="text" placeholder="Your name" value={name} onChange={(e) => setName(e.target.value)} required className={inputClass} style={fieldStyle} />
       <input type="email" placeholder="Email address" value={email} onChange={(e) => setEmail(e.target.value)} required className={inputClass} style={fieldStyle} />
       <input type="tel" placeholder="WhatsApp number" value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} required className={inputClass} style={fieldStyle} />
