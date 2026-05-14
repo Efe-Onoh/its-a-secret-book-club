@@ -2,6 +2,7 @@ import { Inter, EB_Garamond } from "next/font/google";
 import JoinForm from "./components/JoinForm";
 import About from "./components/About";
 import Events from "./components/Events";
+import JoinIntro from "./components/JoinIntro";
 const inter = Inter({ subsets: ["latin"], weight: ["900"], variable: "--font-display" });
 const garamond = EB_Garamond({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-body" });
 
@@ -335,39 +336,39 @@ function CurrentBook() {
 //     </section>
 //   );
 // }
-function JoinIntro() {
-  return (
-    <section className="snap-section flex flex-col items-center justify-center text-center px-8 md:px-24 gap-8" style={{ background: "var(--color-join-bg)", color: "var(--color-join-ink)" }}>
-      <p className="font-body text-xs uppercase tracking-[0.4em]" style={{ opacity: 0.5 }}>
-        Membership
-      </p>
-      <h2
-        className="font-display uppercase leading-none"
-        style={{
-          fontSize: "clamp(60px, min(20vh, 18vw), 280px)",
-          letterSpacing: "-0.03em",
-        }}
-      >
-        WANT IN?
-      </h2>
-      <p className="font-body text-lg md:text-xl max-w-md leading-relaxed" style={{ opacity: 0.75 }}>
-        Sessions are free. Just show up, grab a seat, and enjoy the conversation. Tell us a little about yourself below.
-      </p>
+// function JoinIntro() {
+//   return (
+//     <section className="snap-section flex flex-col items-center justify-center text-center px-8 md:px-24 gap-8" style={{ background: "var(--color-join-bg)", color: "var(--color-join-ink)" }}>
+//       <p className="font-body text-xs uppercase tracking-[0.4em]" style={{ opacity: 0.5 }}>
+//         Membership
+//       </p>
+//       <h2
+//         className="font-display uppercase leading-none"
+//         style={{
+//           fontSize: "clamp(60px, min(20vh, 18vw), 280px)",
+//           letterSpacing: "-0.03em",
+//         }}
+//       >
+//         WANT IN?
+//       </h2>
+//       <p className="font-body text-lg md:text-xl max-w-md leading-relaxed" style={{ opacity: 0.75 }}>
+//         Sessions are free. Just show up, grab a seat, and enjoy the conversation. Tell us a little about yourself below.
+//       </p>
 
-      <a
-        href="#join-form"
-        className="font-display uppercase px-10 py-5 rounded-full border-2 transition-opacity duration-300 hover:opacity-70 no-underline"
-        style={{
-          fontSize: "clamp(16px, 2vw, 24px)",
-          borderColor: "var(--color-join-ink)",
-          color: "var(--color-join-ink)",
-        }}
-      >
-        Join us
-      </a>
-    </section>
-  );
-}
+//       <a
+//         href="#join-form"
+//         className="font-display uppercase px-10 py-5 rounded-full border-2 transition-opacity duration-300 hover:opacity-70 no-underline"
+//         style={{
+//           fontSize: "clamp(16px, 2vw, 24px)",
+//           borderColor: "var(--color-join-ink)",
+//           color: "var(--color-join-ink)",
+//         }}
+//       >
+//         Join us
+//       </a>
+//     </section>
+//   );
+// }
 
 function JoinFormSection() {
   return (
