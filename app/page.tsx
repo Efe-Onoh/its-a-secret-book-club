@@ -369,19 +369,52 @@ function JoinIntro() {
   );
 }
 
+// function JoinFormSection() {
+//   return (
+//     <section id="join-form" className="snap-section flex flex-col items-center justify-center px-8 md:px-24 py-16" style={{ background: "var(--color-join-bg)", color: "var(--color-join-ink)" }}>
+//       <div className="w-full flex flex-col items-center">
+//         <h3
+//           className="font-display uppercase leading-none mb-10"
+//           style={{
+//             fontSize: "clamp(36px, 6vw, 72px)",
+//             letterSpacing: "-0.03em",
+//           }}
+//         >
+//           Tell us about yourself.
+//         </h3>
+//         <JoinForm />
+//       </div>
+//     </section>
+//   );
+// }
 function JoinFormSection() {
   return (
-    <section id="join-form" className="snap-section flex flex-col items-center justify-center px-8 md:px-24 py-16" style={{ background: "var(--color-join-bg)", color: "var(--color-join-ink)" }}>
-      <div className="w-full flex flex-col items-center">
+    <section
+      id="join-form"
+      className="snap-section flex flex-col md:flex-row items-center px-8 md:px-16 py-16 gap-10 md:gap-20"
+      style={{ background: "var(--color-join-bg)", color: "var(--color-join-ink)" }}
+    >
+      {/* Left — heading, full width on mobile, half on desktop */}
+      <div className="w-full md:w-1/2 flex items-center justify-center">
         <h3
-          className="font-display uppercase leading-none mb-10"
+          className="font-display uppercase leading-none text-center md:text-left"
           style={{
-            fontSize: "clamp(36px, 6vw, 72px)",
+            fontSize: "clamp(48px, min(10vw, 10vh), 160px)",
             letterSpacing: "-0.03em",
           }}
         >
-          Tell us about yourself.
+          TELL US
+          <br />
+          ABOUT
+          <br />
+          YOUR
+          <br />
+          SELF.
         </h3>
+      </div>
+
+      {/* Right — form, full width on mobile, half on desktop */}
+      <div className="w-full md:w-1/2">
         <JoinForm />
       </div>
     </section>
