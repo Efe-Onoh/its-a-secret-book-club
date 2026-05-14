@@ -219,7 +219,9 @@ export default function Home() {
       <About />
       <CurrentBook />
       <Events events={EVENTS.slice(0, 6)} />
-      <Join />
+      {/* <Join /> */}
+      <JoinIntro />
+      <JoinFormSection />
       <Footer />
     </main>
   );
@@ -310,26 +312,78 @@ function CurrentBook() {
   );
 }
 
-function Join() {
-  return (
-    <section id="join" className="snap-section flex flex-col md:flex-row" style={{ background: "var(--color-join-bg)", color: "var(--color-join-ink)" }}>
-      {/* Left */}
-      <div className="flex flex-col justify-center md:w-1/2 p-16 border-b md:border-b-0 md:border-r" style={{ borderColor: "var(--color-join-ink)" }}>
-        <p className="font-body text-xs uppercase tracking-[0.4em] mb-6 opacity-70" style={{ color: "var(--color-join-ink)", opacity: 0.7 }}>
-          Membership
-        </p>
-        <h2 className="font-display uppercase leading-none mb-8" style={{ color: "var(--color-join-ink)", opacity: 0.8, fontSize: "clamp(48px, 7vw, 100px)", letterSpacing: "-0.03em" }}>
-          WANT
-          <br />
-          IN?
-        </h2>
-        <p className="font-body text-lg leading-relaxed opacity-80 max-w-sm" style={{ color: "var(--color-join-ink)", opacity: 0.8 }}>
-          Sessions are free. Spots are limited to 12. Tell us a little about yourself and the book that changed you.
-        </p>
-      </div>
+// function Join() {
+//   return (
+//     <section id="join" className="snap-section flex flex-col md:flex-row" style={{ background: "var(--color-join-bg)", color: "var(--color-join-ink)" }}>
+//       {/* Left */}
+//       <div className="flex flex-col justify-center md:w-1/2 p-16 border-b md:border-b-0 md:border-r" style={{ borderColor: "var(--color-join-ink)" }}>
+//         <p className="font-body text-xs uppercase tracking-[0.4em] mb-6 opacity-70" style={{ color: "var(--color-join-ink)", opacity: 0.7 }}>
+//           Membership
+//         </p>
+//         <h2 className="font-display uppercase leading-none mb-8" style={{ color: "var(--color-join-ink)", opacity: 0.8, fontSize: "clamp(48px, 7vw, 100px)", letterSpacing: "-0.03em" }}>
+//           WANT
+//           <br />
+//           IN?
+//         </h2>
+//         <p className="font-body text-lg leading-relaxed opacity-80 max-w-sm" style={{ color: "var(--color-join-ink)", opacity: 0.8 }}>
+//           Sessions are free. Spots are limited to 12. Tell us a little about yourself and the book that changed you.
+//         </p>
+//       </div>
 
-      {/* Right — form */}
-      <JoinForm />
+//       {/* Right — form */}
+//       <JoinForm />
+//     </section>
+//   );
+// }
+function JoinIntro() {
+  return (
+    <section className="snap-section flex flex-col items-center justify-center text-center px-8 md:px-24 gap-8" style={{ background: "var(--color-join-bg)", color: "var(--color-join-ink)" }}>
+      <p className="font-body text-xs uppercase tracking-[0.4em]" style={{ opacity: 0.5 }}>
+        Membership
+      </p>
+      <h2
+        className="font-display uppercase leading-none"
+        style={{
+          fontSize: "clamp(60px, min(20vh, 18vw), 280px)",
+          letterSpacing: "-0.03em",
+        }}
+      >
+        WANT IN?
+      </h2>
+      <p className="font-body text-lg md:text-xl max-w-md leading-relaxed" style={{ opacity: 0.75 }}>
+        Sessions are free. Just show up, grab a seat, and enjoy the conversation. Tell us a little about yourself below.
+      </p>
+
+      <a
+        href="#join-form"
+        className="font-display uppercase px-10 py-5 rounded-full border-2 transition-opacity duration-300 hover:opacity-70 no-underline"
+        style={{
+          fontSize: "clamp(16px, 2vw, 24px)",
+          borderColor: "var(--color-join-ink)",
+          color: "var(--color-join-ink)",
+        }}
+      >
+        Join us
+      </a>
+    </section>
+  );
+}
+
+function JoinFormSection() {
+  return (
+    <section id="join-form" className="snap-section flex flex-col items-center justify-center px-8 md:px-24 py-16" style={{ background: "var(--color-join-bg)", color: "var(--color-join-ink)" }}>
+      <div className="w-full flex flex-col items-center">
+        <h3
+          className="font-display uppercase leading-none mb-10"
+          style={{
+            fontSize: "clamp(36px, 6vw, 72px)",
+            letterSpacing: "-0.03em",
+          }}
+        >
+          Tell us about yourself.
+        </h3>
+        <JoinForm />
+      </div>
     </section>
   );
 }
