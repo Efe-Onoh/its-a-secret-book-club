@@ -376,7 +376,7 @@ function JoinFormSection() {
         <h3
           className="font-display uppercase leading-none mb-10"
           style={{
-            fontSize: "clamp(40px, 2vw, 6vw)",
+            fontSize: "clamp(10px, 2vw, 6vw)",
             letterSpacing: "-0.03em",
           }}
         >
