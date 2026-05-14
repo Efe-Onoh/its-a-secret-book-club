@@ -373,6 +373,15 @@ function JoinFormSection() {
   return (
     <section id="join-form" className="snap-section flex flex-col items-center justify-center px-8 md:px-24 py-16" style={{ background: "var(--color-join-bg)", color: "var(--color-join-ink)" }}>
       <div className="w-full flex flex-col items-center">
+        <h3
+          className="font-display uppercase leading-none mb-10"
+          style={{
+            fontSize: "clamp(40px, 2vw, 6vw)",
+            letterSpacing: "-0.03em",
+          }}
+        >
+          Tell us about yourself.
+        </h3>
         <JoinForm />
       </div>
     </section>
