@@ -54,7 +54,7 @@ function EventTicket({ event, visible, delay }: { event: Event; visible: boolean
         {/* Bottom notch */}
         <div className="absolute -left-2 -bottom-2 w-5 h-5 rounded-full" style={{ background: "var(--color-events-bg)" }} />
       </div>
-      <div className="flex flex-col flex-1 md:px-4 py-3 min-w-0 justify-between">
+      <div className="flex flex-col flex-1 px-2 md:px-4 py-3 min-w-0 justify-between">
         <p className=" font-body text-[8px] md:text-[10px] uppercase tracking-[0.2em] truncate" style={{ color: "#000", opacity: 0.5 }}>
           {event.date} · {event.time}
         </p>
