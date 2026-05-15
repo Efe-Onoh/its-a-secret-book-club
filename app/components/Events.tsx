@@ -199,7 +199,7 @@ export default function Events({ events }: { events: Event[] }) {
         }}
       >
         {events.map((event, i) => (
-          <div key={event.id} className="flex-shrink-0 w-[82vw]" style={{ scrollSnapAlign: "start" }}>
+          <div key={event.id} className="flex-shrink-0 w-[75vw]" style={{ scrollSnapAlign: "start" }}>
             <EventTicket event={event} visible={visible} delay={i * 100} />
           </div>
         ))}
