@@ -21,7 +21,7 @@ function EventTicket({ event, visible, delay }: { event: Event; visible: boolean
 
   return (
     <div
-      className=" h-[100] md:h-[140] flex rounded-2xl overflow-hidden bg-white transition-all duration-700"
+      className=" h-[140] flex rounded-2xl overflow-hidden bg-white transition-all duration-700"
       style={{
         transform: visible ? "translateY(0)" : "translateY(60px)",
         opacity: visible ? 1 : 0,
@@ -32,7 +32,7 @@ function EventTicket({ event, visible, delay }: { event: Event; visible: boolean
       }}
     >
       {/* Left — book cover fills entire left side with padding */}
-      <div className="w-[60] md:w-[90] flex-shrink-0 p-2" style={{ background: "#f0f0f0" }}>
+      <div className="w-auto md:w-[90] flex-shrink-0 p-2" style={{ background: "#f0f0f0" }}>
         <img
           src={coverUrl}
           alt={event.title}
@@ -61,12 +61,12 @@ function EventTicket({ event, visible, delay }: { event: Event; visible: boolean
         {/* Bottom notch */}
         <div className="absolute -left-2 -bottom-2 w-5 h-5 rounded-full" style={{ background: "var(--color-events-bg)" }} />
       </div>
-      <div className="flex flex-col flex-1 px-4 py-3 min-w-0 justify-between">
+      <div className="flex flex-col flex-1 px-2 md:px-4 py-3 min-w-0 justify-between">
         <p className=" font-body text-[10px] uppercase tracking-[0.2em] truncate" style={{ color: "#000", opacity: 0.5 }}>
           {event.date} · {event.time}
         </p>
         {/* Right — event details + big RSVP */}
-        <div className="flex items-center justify-between gap-3 flex-1 min-w-0">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 flex-1 min-w-0">
           {/* Left side of details */}
           <div className="flex flex-col gap-1 flex-1 min-w-0">
             <h3
