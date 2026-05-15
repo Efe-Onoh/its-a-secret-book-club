@@ -21,24 +21,23 @@ function EventTicket({ event, visible, delay }: { event: Event; visible: boolean
 
   return (
     <div
-      className="flex rounded-2xl overflow-hidden bg-white transition-all duration-700"
+      className="h-[100] md:h-[140] flex rounded-2xl overflow-hidden bg-white transition-all duration-700"
       style={{
         transform: visible ? "translateY(0)" : "translateY(60px)",
         opacity: visible ? 1 : 0,
         transitionDelay: `${delay}ms`,
         boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
-        height: "140px",
         // On mobile — fixed width for carousel
         // On desktop — full width of grid cell
         minWidth: "280px",
       }}
     >
       {/* Left — book cover fills entire left side with padding */}
-      <div className="flex-shrink-0 p-2" style={{ width: "90px", background: "#f0f0f0" }}>
+      <div className="w-[60] md:w-[90] flex-shrink-0 p-2" style={{ background: "#f0f0f0" }}>
         <img
           src={coverUrl}
           alt={event.title}
-          className="w-full h-full object-cover rounded-xl"
+          className="h-full md:w-full md:h-full object-cover rounded-xl"
           onError={(e) => {
             e.currentTarget.style.display = "none";
           }}
