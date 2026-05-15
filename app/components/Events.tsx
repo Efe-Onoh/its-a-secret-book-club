@@ -21,7 +21,7 @@ function EventTicket({ event, visible, delay }: { event: Event; visible: boolean
 
   return (
     <div
-      className=" h-[140] flex rounded-2xl overflow-hidden bg-white transition-all duration-700"
+      className=" h-[150] flex rounded-2xl overflow-hidden bg-white transition-all duration-700"
       style={{
         transform: visible ? "translateY(0)" : "translateY(60px)",
         opacity: visible ? 1 : 0,
@@ -32,7 +32,7 @@ function EventTicket({ event, visible, delay }: { event: Event; visible: boolean
       }}
     >
       {/* Left — book cover fills entire left side with padding */}
-      <div className="w-auto md:w-[90] flex-shrink-0 p-2" style={{ background: "#f0f0f0" }}>
+      <div className="w-[auto] md:w-[90] flex-shrink-0 p-2" style={{ background: "#f0f0f0" }}>
         <img
           src={coverUrl}
           alt={event.title}
@@ -61,7 +61,7 @@ function EventTicket({ event, visible, delay }: { event: Event; visible: boolean
         {/* Bottom notch */}
         <div className="absolute -left-2 -bottom-2 w-5 h-5 rounded-full" style={{ background: "var(--color-events-bg)" }} />
       </div>
-      <div className="flex flex-col flex-1 px-2 md:px-4 py-3 min-w-0 justify-between">
+      <div className="flex flex-col flex-1 md:px-4 py-3 min-w-0 justify-between">
         <p className=" font-body text-[10px] uppercase tracking-[0.2em] truncate" style={{ color: "#000", opacity: 0.5 }}>
           {event.date} · {event.time}
         </p>
