@@ -21,7 +21,7 @@ function EventTicket({ event, visible, delay }: { event: Event; visible: boolean
 
   return (
     <div
-      className="h-[100] md:h-[140] flex rounded-2xl overflow-hidden bg-white transition-all duration-700"
+      className=" h-[100] md:h-[140] flex rounded-2xl overflow-hidden bg-white transition-all duration-700"
       style={{
         transform: visible ? "translateY(0)" : "translateY(60px)",
         opacity: visible ? 1 : 0,
@@ -29,7 +29,6 @@ function EventTicket({ event, visible, delay }: { event: Event; visible: boolean
         boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
         // On mobile — fixed width for carousel
         // On desktop — full width of grid cell
-        minWidth: "280px",
       }}
     >
       {/* Left — book cover fills entire left side with padding */}
