@@ -21,18 +21,20 @@ function EventTicket({ event, visible, delay }: { event: Event; visible: boolean
 
   return (
     <div
-      className="flex rounded-2xl overflow-hidden bg-white w-full transition-all duration-700"
+      className="flex rounded-2xl overflow-hidden bg-white transition-all duration-700"
       style={{
         transform: visible ? "translateY(0)" : "translateY(60px)",
         opacity: visible ? 1 : 0,
         transitionDelay: `${delay}ms`,
-        maxWidth: "480px",
-        height: "140px",
         boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
+        height: "140px",
+        // On mobile — fixed width for carousel
+        // On desktop — full width of grid cell
+        minWidth: "280px",
       }}
     >
       {/* Left — book cover fills entire left side with padding */}
-      <div className="flex-shrink-0 p-2" style={{ width: "100px", background: "#f0f0f0" }}>
+      <div className="flex-shrink-0 p-2" style={{ width: "90px", background: "#f0f0f0" }}>
         <img
           src={coverUrl}
           alt={event.title}
@@ -61,14 +63,14 @@ function EventTicket({ event, visible, delay }: { event: Event; visible: boolean
         {/* Bottom notch */}
         <div className="absolute -left-2 -bottom-2 w-5 h-5 rounded-full" style={{ background: "var(--color-events-bg)" }} />
       </div>
-      <div className="flex flex-col flex-1 px-5 py-2 min-w-0">
+      <div className="flex flex-col flex-1 px-4 py-3 min-w-0 justify-between">
         <p className=" font-body text-[10px] uppercase tracking-[0.2em] truncate" style={{ color: "#000", opacity: 0.5 }}>
           {event.date} · {event.time}
         </p>
         {/* Right — event details + big RSVP */}
-        <div className="flex items-center justify-between flex-1 gap-4">
+        <div className="flex items-center justify-between gap-3 flex-1 min-w-0">
           {/* Left side of details */}
-          <div className="flex flex-col gap-1.5 flex-1 min-w-0">
+          <div className="flex flex-col gap-1 flex-1 min-w-0">
             <h3
               className="font-display uppercase leading-none"
               style={{
@@ -88,9 +90,9 @@ function EventTicket({ event, visible, delay }: { event: Event; visible: boolean
           </div>
           {/* RSVP — right side, big and bold */}
           <button
-            className="font-display uppercase flex-shrink-0 px-5 py-3 rounded-full border-2 transition-all duration-200 hover:opacity-70"
+            className="font-display uppercase flex-shrink-0 px-4 py-2 rounded-full border-2 transition-all duration-200 hover:opacity-70"
             style={{
-              fontSize: "clamp(14px, 2vw, 20px)",
+              fontSize: "clamp(12px, 1.5vw, 18px)",
               letterSpacing: "-0.01em",
               borderColor: "#000",
               color: "#000",
@@ -170,7 +172,7 @@ export default function Events({ events }: { events: Event[] }) {
   return (
     <section
       ref={sectionRef}
-      className="snap-section flex flex-col justify-center px-8 md:px-16 py-16 gap-10"
+      className="snap-section flex flex-col justify-center px-8 md:px-16 py-16 gap-8"
       style={{
         background: "var(--color-events-bg)",
         color: "var(--color-events-ink)",
@@ -191,10 +193,29 @@ export default function Events({ events }: { events: Event[] }) {
           Upcoming Events
         </h2>
       </div>
+      {/* 
+        Mobile — horizontal carousel, swipe left/right
+        Desktop — 2 column grid 
+      */}
 
+      {/* Mobile carousel — hidden on md and above */}
+      <div
+        className="flex md:hidden gap-4 overflow-x-auto pb-2"
+        style={{
+          scrollSnapType: "x mandatory",
+          WebkitOverflowScrolling: "touch",
+          scrollbarWidth: "none",
+        }}
+      >
+        {events.map((event, i) => (
+          <div key={event.id} className="flex-shrink-0 w-[82vw]" style={{ scrollSnapAlign: "start" }}>
+            <EventTicket event={event} visible={visible} delay={i * 100} />
+          </div>
+        ))}
+      </div>
       {/* Ticket grid */}
       {/* 1 column mobile, 2 columns from md, 3 from lg */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-5">
         {events.map((event, i) => (
           <EventTicket
             key={event.id}
@@ -206,6 +227,10 @@ export default function Events({ events }: { events: Event[] }) {
           />
         ))}
       </div>
+      {/* Swipe hint — mobile only */}
+      <p className="flex md:hidden font-body text-xs uppercase tracking-widest" style={{ opacity: 0.4, color: "var(--color-events-ink, #0a0a0a)" }}>
+        Swipe to see more →
+      </p>
     </section>
   );
 }
