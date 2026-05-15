@@ -45,14 +45,7 @@ function EventTicket({ event, visible, delay }: { event: Event; visible: boolean
 
       {/* Perforated edge — small circles stacked vertically */}
       {/* repeating-linear-gradient creates the dot pattern */}
-      <div
-        className="flex-shrink-0 relative flex flex-col gap-1"
-        style={{
-          width: "20px",
-          // The semicircle notches at top and bottom
-          // are replaced by the circle pattern continuing to the edge
-        }}
-      >
+      <div className="flex-shrink-0 w-[15] md:w-[20] relative flex flex-col gap-1">
         {Array.from({ length: 16 }).map((_, i) => (
           <div key={i} className="w-1 h-1 rounded-full flex-shrink-0" style={{ background: "#000", opacity: 0.4 }} />
         ))}
