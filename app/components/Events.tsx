@@ -55,7 +55,7 @@ function EventTicket({ event, visible, delay }: { event: Event; visible: boolean
         <div className="absolute -left-2 -bottom-2 w-5 h-5 rounded-full" style={{ background: "var(--color-events-bg)" }} />
       </div>
       <div className="flex flex-col flex-1 md:px-4 py-3 min-w-0 justify-between">
-        <p className=" font-body text-[8px] md:text-[10px] uppercase tracking-[0.2em] truncate" style={{ color: "#000", opacity: 0.5 }}>
+        <p className=" font-body text-[6px] md:text-[10px] uppercase tracking-[0.2em] truncate" style={{ color: "#000", opacity: 0.5 }}>
           {event.date} · {event.time}
         </p>
         {/* Right — event details + big RSVP */}
@@ -65,17 +65,17 @@ function EventTicket({ event, visible, delay }: { event: Event; visible: boolean
             <h3
               className="font-display uppercase leading-none"
               style={{
-                fontSize: "clamp(13px, 2vw, 18px)",
+                fontSize: "clamp(9px, 2vw, 18px)",
                 letterSpacing: "-0.02em",
                 color: "#000",
               }}
             >
               {event.title}
             </h3>
-            <p className="font-body text-xs truncate" style={{ color: "#000", opacity: 0.6 }}>
+            <p className="font-body text-[10px] md:text-xs truncate" style={{ color: "#000", opacity: 0.6 }}>
               by {event.author}
             </p>
-            <p className="font-body text-[10px] truncate" style={{ color: "#000", opacity: 0.4 }}>
+            <p className="font-body text-[6px] md:text-[10px] truncate" style={{ color: "#000", opacity: 0.4 }}>
               {event.location} · {event.spots} spots
             </p>
           </div>
@@ -199,7 +199,7 @@ export default function Events({ events }: { events: Event[] }) {
         }}
       >
         {events.map((event, i) => (
-          <div key={event.id} className="flex-shrink-0 w-[75vw]" style={{ scrollSnapAlign: "start" }}>
+          <div key={event.id} className="flex-shrink-0 w-[80vw]" style={{ scrollSnapAlign: "start" }}>
             <EventTicket event={event} visible={visible} delay={i * 100} />
           </div>
         ))}
