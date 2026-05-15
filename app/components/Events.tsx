@@ -32,7 +32,7 @@ function EventTicket({ event, visible, delay }: { event: Event; visible: boolean
       }}
     >
       {/* Left — book cover fills entire left side with padding */}
-      <div className="w-[auto] md:w-[90] flex-shrink-0 p-2" style={{ background: "#f0f0f0" }}>
+      <div className="max-w-[120] flex-shrink-0 p-2" style={{ background: "#f0f0f0" }}>
         <img
           src={coverUrl}
           alt={event.title}
@@ -55,7 +55,7 @@ function EventTicket({ event, visible, delay }: { event: Event; visible: boolean
         <div className="absolute -left-2 -bottom-2 w-5 h-5 rounded-full" style={{ background: "var(--color-events-bg)" }} />
       </div>
       <div className="flex flex-col flex-1 md:px-4 py-3 min-w-0 justify-between">
-        <p className=" font-body text-[6px] md:text-[10px] uppercase tracking-[0.2em] truncate" style={{ color: "#000", opacity: 0.5 }}>
+        <p className=" font-body text-[8px] md:text-[10px] uppercase tracking-[0.2em] truncate" style={{ color: "#000", opacity: 0.5 }}>
           {event.date} · {event.time}
         </p>
         {/* Right — event details + big RSVP */}
@@ -65,17 +65,17 @@ function EventTicket({ event, visible, delay }: { event: Event; visible: boolean
             <h3
               className="font-display uppercase leading-none"
               style={{
-                fontSize: "clamp(9px, 2vw, 18px)",
+                fontSize: "clamp(12px, 2vw, 18px)",
                 letterSpacing: "-0.02em",
                 color: "#000",
               }}
             >
               {event.title}
             </h3>
-            <p className="font-body text-[10px] md:text-xs truncate" style={{ color: "#000", opacity: 0.6 }}>
+            <p className="font-body text-[12px] md:text-xs truncate" style={{ color: "#000", opacity: 0.6 }}>
               by {event.author}
             </p>
-            <p className="font-body text-[6px] md:text-[10px] truncate" style={{ color: "#000", opacity: 0.4 }}>
+            <p className="font-body text-[10px] md:text-[10px] truncate" style={{ color: "#000", opacity: 0.4 }}>
               {event.location} · {event.spots} spots
             </p>
           </div>
