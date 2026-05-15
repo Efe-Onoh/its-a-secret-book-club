@@ -21,7 +21,7 @@ function EventTicket({ event, visible, delay }: { event: Event; visible: boolean
 
   return (
     <div
-      className=" h-[150] flex rounded-2xl overflow-hidden bg-white transition-all duration-700"
+      className="w-full h-[150] flex rounded-2xl overflow-hidden bg-white transition-all duration-700"
       style={{
         transform: visible ? "translateY(0)" : "translateY(60px)",
         opacity: visible ? 1 : 0,
