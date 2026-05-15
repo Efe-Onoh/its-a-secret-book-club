@@ -200,7 +200,7 @@ export default function Events({ events }: { events: Event[] }) {
 
       {/* Mobile carousel — hidden on md and above */}
       <div
-        className="flex md:hidden gap-4 overflow-x-auto pb-2"
+        className="flex md:hidden gap-6 overflow-x-auto pb-2"
         style={{
           scrollSnapType: "x mandatory",
           WebkitOverflowScrolling: "touch",
