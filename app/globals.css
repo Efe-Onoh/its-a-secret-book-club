@@ -76,10 +76,3 @@ h3 {
   width: 100%;
   scroll-snap-stop: always;
 }
-
-@media (max-width: 768px) {
-  .snap-section-form {
-    scroll-snap-align: none;
-    min-height: auto;
-  }
-}

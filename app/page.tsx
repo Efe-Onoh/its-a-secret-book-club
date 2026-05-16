@@ -372,11 +372,7 @@ function CurrentBook() {
 
 function JoinFormSection() {
   return (
-    <section
-      id="join-form"
-      className="snap-section snap-section-form flex flex-col items-center justify-center px-8 md:px-24 py-16"
-      style={{ background: "var(--color-join-bg)", color: "var(--color-join-ink)" }}
-    >
+    <section id="join-form" className="snap-section flex flex-col items-center justify-center px-8 md:px-24 py-16" style={{ background: "var(--color-join-bg)", color: "var(--color-join-ink)" }}>
       <div className="w-full flex flex-col items-center">
         <h3
           className="font-display uppercase leading-none mb-10"

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function JoinForm() {
   const [name, setName] = useState("");
@@ -8,6 +8,30 @@ export default function JoinForm() {
   const [whatsapp, setWhatsapp] = useState("");
   const [bookAnswer, setBookAnswer] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  useEffect(() => {
+    const inputs = document.querySelectorAll("input, textarea");
+
+    const disableSnap = () => {
+      document.documentElement.style.scrollSnapType = "none";
+    };
+
+    const enableSnap = () => {
+      document.documentElement.style.scrollSnapType = "y mandatory";
+    };
+
+    inputs.forEach((input) => {
+      input.addEventListener("focus", disableSnap);
+      input.addEventListener("blur", enableSnap);
+    });
+
+    return () => {
+      inputs.forEach((input) => {
+        input.removeEventListener("focus", disableSnap);
+        input.removeEventListener("blur", enableSnap);
+      });
+    };
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
