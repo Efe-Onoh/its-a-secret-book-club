@@ -54,37 +54,38 @@ function EventTicket({ event, visible, delay }: { event: Event; visible: boolean
         {/* Bottom notch */}
         <div className="absolute -left-2 -bottom-2 w-5 h-5 rounded-full" style={{ background: "var(--color-events-bg)" }} />
       </div>
-      <div className="flex flex-col flex-1 px-2 md:px-4 py-3 min-w-0 justify-between">
-        <p className=" font-body text-[8px] md:text-[10px] uppercase tracking-[0.2em] truncate" style={{ color: "#000", opacity: 0.5 }}>
+      <div className="flex flex-col flex-1 px-2 md:px-4 py-2 min-w-0 overflow-hidden" style={{ height: "100%" }}>
+        {/* Date — pinned at top, never moves */}
+        <p className="font-body text-[8px] md:text-[10px] uppercase tracking-[0.2em] truncate flex-shrink-0 mb-1" style={{ color: "#000", opacity: 0.5 }}>
           {event.date} · {event.time}
         </p>
-        {/* Right — event details + big RSVP */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 flex-1 min-w-0">
-          {/* Left side of details */}
-          <div className="flex flex-col gap-1 flex-1 min-w-0">
-            <h3
-              className="font-display uppercase leading-none"
-              style={{
-                fontSize: "clamp(12px, 2vw, 18px)",
-                letterSpacing: "-0.02em",
-                color: "#000",
-              }}
-            >
-              {event.title}
-            </h3>
-            <p className="font-body text-[12px] md:text-xs truncate" style={{ color: "#000", opacity: 0.6 }}>
-              by {event.author}
-            </p>
-            <p className="font-body text-[10px] md:text-[10px] truncate" style={{ color: "#000", opacity: 0.4 }}>
-              {event.location} · {event.spots} spots
-            </p>
-          </div>
-          {/* RSVP — right side, big and bold */}
-          <button
-            className="font-display uppercase flex-shrink-0 px-4 py-2 rounded-full border-2 transition-all duration-200 hover:opacity-70"
+
+        {/* Middle — title and author, takes remaining space */}
+        <div className="flex flex-col gap-0.5 flex-1 min-w-0 overflow-hidden justify-center">
+          <h3
+            className="font-display uppercase leading-none line-clamp-2"
             style={{
-              fontSize: "clamp(12px, 1.5vw, 18px)",
-              letterSpacing: "-0.01em",
+              fontSize: "clamp(11px, 2vw, 18px)",
+              letterSpacing: "-0.02em",
+              color: "#000",
+            }}
+          >
+            {event.title}
+          </h3>
+          <p className="font-body text-[10px] md:text-xs truncate" style={{ color: "#000", opacity: 0.6 }}>
+            by {event.author}
+          </p>
+          <p className="font-body text-[9px] md:text-[10px] truncate" style={{ color: "#000", opacity: 0.4 }}>
+            {event.location} · {event.spots} spots
+          </p>
+        </div>
+
+        {/* RSVP — pinned at bottom */}
+        <div className="flex justify-end flex-shrink-0 mt-1">
+          <button
+            className="font-display uppercase px-3 py-1.5 rounded-full border-2 transition-all duration-200 hover:opacity-70 flex-shrink-0"
+            style={{
+              fontSize: "clamp(10px, 1.5vw, 16px)",
               borderColor: "#000",
               color: "#000",
             }}
