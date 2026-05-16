@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Inter, EB_Garamond } from "next/font/google";
+import { Inter, EB_Garamond, Playfair_Display, Outfit, Josefin_Sans, DM_Sans } from "next/font/google";
+
 import "./globals.css";
 export const dynamic = "force-dynamic";
 // fonts are functions called with the settings object param
@@ -16,6 +17,12 @@ const garamond = EB_Garamond({
   variable: "--font-body",
 });
 
+const playfair_display = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  style: ["normal", "italic"],
+  variable: "--font-body",
+});
 //metadata
 export const metadata: Metadata = {
   title: "It's A Secret Book Club",
@@ -24,7 +31,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${garamond.variable}`}>
+    <html lang="en" className={`${inter.variable} ${playfair_display.variable}`}>
       <head>
         <script
           dangerouslySetInnerHTML={{

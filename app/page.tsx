@@ -1,11 +1,16 @@
-import { Inter, EB_Garamond } from "next/font/google";
+import { Inter, EB_Garamond, Playfair_Display, Outfit, Josefin_Sans, DM_Sans } from "next/font/google";
 import JoinForm from "./components/JoinForm";
 import About from "./components/About";
 import Events from "./components/Events";
 import JoinIntro from "./components/JoinIntro";
 const inter = Inter({ subsets: ["latin"], weight: ["900"], variable: "--font-display" });
 const garamond = EB_Garamond({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-body" });
-
+const playfair_display = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  style: ["normal"],
+  variable: "--font-body",
+});
 // Colour swatches — section backgrounds rotate through these randomly via JS
 // Each swatch has a bg and a matching ink colour for readable text
 const SWATCHES = [
@@ -215,7 +220,7 @@ const CURRENT_BOOK = {
 
 export default function Home() {
   return (
-    <main className={`${inter.variable} ${garamond.variable}`}>
+    <main className={`${inter.variable} ${playfair_display.variable}`}>
       <Hero />
       <About />
       <CurrentBook />
