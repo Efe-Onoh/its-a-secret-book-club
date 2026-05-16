@@ -32,7 +32,17 @@ export default function JoinForm() {
       });
     };
   }, []);
+  useEffect(() => {
+    if (status === "success") {
+      const timer = setTimeout(() => {
+        setStatus("idle");
+      }, 5000);
 
+      // Cleanup — clears the timer if the component unmounts
+      // before the 4 seconds is up
+      return () => clearTimeout(timer);
+    }
+  }, [status]);
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
