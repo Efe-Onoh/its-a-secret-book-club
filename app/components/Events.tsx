@@ -32,11 +32,11 @@ function EventTicket({ event, visible, delay }: { event: Event; visible: boolean
       }}
     >
       {/* Left — book cover fills entire left side with padding */}
-      <div className="max-w-[120] flex-shrink-0 p-2" style={{ background: "#f0f0f0" }}>
+      <div className="max-w-[100px] flex-shrink-0 p-2" style={{ background: "#f0f0f0" }}>
         <img
           src={coverUrl}
           alt={event.title}
-          className="h-full md:w-full md:h-full object-cover rounded-xl"
+          className="w-full h-full md:w-full md:h-full object-cover rounded-xl"
           onError={(e) => {
             e.currentTarget.style.display = "none";
           }}
