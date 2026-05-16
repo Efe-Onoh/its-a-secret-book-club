@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-
+import RSVPModal from "./RSVPModal";
 interface Event {
   id: string;
   title: string;
@@ -16,7 +16,7 @@ interface Event {
 
 // Ticket component — one per event
 // Image left, perforated edge, details right
-function EventTicket({ event, visible, delay }: { event: Event; visible: boolean; delay: number }) {
+function EventTicket({ event, visible, delay, onRSVP }: { event: Event; visible: boolean; delay: number; onRSVP: () => void }) {
   const coverUrl = `https://covers.openlibrary.org/b/isbn/${event.isbn}-L.jpg`;
 
   return (
@@ -83,6 +83,7 @@ function EventTicket({ event, visible, delay }: { event: Event; visible: boolean
         {/* RSVP — pinned at bottom */}
         <div className="flex justify-end flex-shrink-0 mt-1">
           <button
+            onClick={onRSVP}
             className="font-display uppercase px-3 py-1.5 rounded-full border-2 transition-all duration-200 hover:opacity-70 flex-shrink-0"
             style={{
               fontSize: "clamp(10px, 1.5vw, 16px)",
@@ -104,6 +105,7 @@ export default function Events({ events }: { events: Event[] }) {
   // starts false — tickets are below screen
   // becomes true when section enters viewport
   const [visible, setVisible] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState<(typeof events)[0] | null>(null);
 
   useEffect(() => {
     // Intersection Observer watches the section
@@ -216,6 +218,7 @@ export default function Events({ events }: { events: Event[] }) {
             // Each ticket gets a staggered delay — 0ms, 150ms, 300ms
             // So they fly in one after another, not all at once
             delay={i * 150}
+            onRSVP={() => setSelectedEvent(event)}
           />
         ))}
       </div>
@@ -223,6 +226,8 @@ export default function Events({ events }: { events: Event[] }) {
       <p className="flex md:hidden font-body text-xs uppercase tracking-widest" style={{ opacity: 0.4, color: "var(--color-events-ink, #0a0a0a)" }}>
         Swipe to see more →
       </p>
+
+      {selectedEvent && <RSVPModal event={selectedEvent} onClose={() => setSelectedEvent(null)} />}
     </section>
   );
 }
