@@ -84,13 +84,13 @@ export default function RSVPModal({ event, onClose }: { event: Event; onClose: (
         ) : (
           <>
             {/* Event details header */}
-            <div className="flex gap-0">
+            <div className="flex flex-col md:flex-row gap-0">
               {/* Book cover */}
-              <div className="w-32 md:w-48 flex-shrink-0 bg-gray-100">
+              <div className="w-full md:w-48 flex-shrink-0 bg-gray-100">
                 <img
                   src={coverUrl}
                   alt={event.title}
-                  className="w-full h-full object-cover rounded-l-2xl"
+                  className="w-full h-[200] md:h-full object-cover md:rounded-l-2xl"
                   onError={(e) => {
                     e.currentTarget.style.display = "none";
                   }}
