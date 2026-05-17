@@ -104,10 +104,6 @@ export default function Events({ events }: { events: Event[] }) {
   const [selectedEvent, setSelectedEvent] = useState<(typeof events)[0] | null>(null);
 
   useEffect(() => {
-    // Fallback — set visible after 500ms regardless
-    // Handles browser back navigation from cache
-    const fallback = setTimeout(() => setVisible(true), 500);
-
     // Intersection Observer watches the section
     // When it enters the viewport, we set visible to true
     // This triggers the CSS transition on each ticket
@@ -129,10 +125,7 @@ export default function Events({ events }: { events: Event[] }) {
       observer.observe(sectionRef.current);
     }
 
-    return () => {
-      clearTimeout(fallback);
-      observer.disconnect();
-    };
+    return () => observer.disconnect();
   }, []);
 
   return (
