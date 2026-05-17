@@ -16,7 +16,7 @@ interface Event {
 
 // Ticket component — one per event
 // Image left, perforated edge, details right
-function EventTicket({ event, visible, delay, onRSVP }: { event: Event; visible: boolean; delay: number; onRSVP: () => void }) {
+function EventTicket({ event, visible, delay }: { event: Event; visible: boolean; delay: number }) {
   const coverUrl = `https://covers.openlibrary.org/b/isbn/${event.isbn}-L.jpg`;
 
   return (
@@ -82,17 +82,13 @@ function EventTicket({ event, visible, delay, onRSVP }: { event: Event; visible:
 
         {/* RSVP — pinned at bottom */}
         <div className="flex justify-end flex-shrink-0 mt-1">
-          <button
-            onClick={onRSVP}
-            className="font-display uppercase px-3 py-1.5 rounded-full border-2 transition-all duration-200 hover:opacity-70 flex-shrink-0"
-            style={{
-              fontSize: "clamp(10px, 1.5vw, 16px)",
-              borderColor: "#000",
-              color: "#000",
-            }}
+          <a
+            href={`/rsvp/${event.id}?data=${encodeURIComponent(JSON.stringify(event))}`}
+            className="font-display uppercase flex-shrink-0 px-3 py-1.5 rounded-full border-2 transition-all duration-200 hover:opacity-70 no-underline"
+            style={{ fontSize: "clamp(10px, 1.5vw, 16px)", borderColor: "#000", color: "#000" }}
           >
             RSVP
-          </button>
+          </a>
         </div>
       </div>
     </div>
@@ -131,37 +127,6 @@ export default function Events({ events }: { events: Event[] }) {
 
     return () => observer.disconnect();
   }, []);
-  // useEffect(() => {
-  //   // Intersection Observer watches the section
-  //   // When it enters the viewport, we set visible to true
-  //   // This triggers the CSS transition on each ticket
-  //   const observer = new IntersectionObserver(
-  //     ([entry]) => {
-  //       if (entry.isIntersecting) {
-  //         setVisible(true);
-  //       } else {
-  //         // Reset when section leaves — so animation replays on re-entry
-  //         setVisible(false);
-  //       }
-  //     },
-  //     // threshold: 0.2 means the animation triggers when
-  //     // 20% of the section is visible in the viewport
-  //     { threshold: 0.2 },
-  //   );
-
-  //   // Small timeout gives the browser time to finish
-  //   // painting before the observer starts watching
-  //   const timer = setTimeout(() => {
-  //     if (sectionRef.current) {
-  //       observer.observe(sectionRef.current);
-  //     }
-  //   }, 100);
-
-  //   return () => {
-  //     clearTimeout(timer);
-  //     observer.disconnect();
-  //   };
-  // }, []);
 
   return (
     <section
@@ -203,7 +168,7 @@ export default function Events({ events }: { events: Event[] }) {
       >
         {events.map((event, i) => (
           <div key={event.id} className="flex-shrink-0 w-[80vw]" style={{ scrollSnapAlign: "start" }}>
-            <EventTicket event={event} visible={visible} delay={i * 150} onRSVP={() => setSelectedEvent(event)} />
+            <EventTicket event={event} visible={visible} delay={i * 150} />
           </div>
         ))}
       </div>
@@ -218,7 +183,6 @@ export default function Events({ events }: { events: Event[] }) {
             // Each ticket gets a staggered delay — 0ms, 150ms, 300ms
             // So they fly in one after another, not all at once
             delay={i * 150}
-            onRSVP={() => setSelectedEvent(event)}
           />
         ))}
       </div>
@@ -226,8 +190,6 @@ export default function Events({ events }: { events: Event[] }) {
       <p className="flex md:hidden font-body text-xs uppercase tracking-widest" style={{ opacity: 0.4, color: "var(--color-events-ink, #0a0a0a)" }}>
         Swipe to see more →
       </p>
-
-      {selectedEvent && <RSVPModal event={selectedEvent} onClose={() => setSelectedEvent(null)} />}
     </section>
   );
 }
