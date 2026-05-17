@@ -254,7 +254,11 @@ function Hero() {
 
 function CurrentBook() {
   return (
-    <section className="snap-section flex flex-col items-center justify-center text-center px-8 md:px-24" style={{ background: "var(--color-currentbook-bg)", color: "var(--color-currentbook-ink)" }}>
+    <section
+      id="currentbook"
+      className="snap-section flex flex-col items-center justify-center text-center px-8 md:px-24"
+      style={{ background: "var(--color-currentbook-bg)", color: "var(--color-currentbook-ink)" }}
+    >
       <p className="font-body text-xs uppercase tracking-[0.4em] mb-8 opacity-60" style={{ color: "var(--color-currentbook-ink)", opacity: 0.6 }}>
         Currently reading
       </p>

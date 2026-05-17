@@ -7,7 +7,11 @@ export default function JoinIntro() {
   };
 
   return (
-    <section className="snap-section flex flex-col items-center justify-center text-center px-8 md:px-24 gap-8" style={{ background: "var(--color-join-bg)", color: "var(--color-join-ink)" }}>
+    <section
+      id="join-intro"
+      className="snap-section flex flex-col items-center justify-center text-center px-8 md:px-24 gap-8"
+      style={{ background: "var(--color-join-bg)", color: "var(--color-join-ink)" }}
+    >
       <p className="font-body text-xs uppercase tracking-[0.4em]" style={{ opacity: 0.5 }}>
         Membership
       </p>

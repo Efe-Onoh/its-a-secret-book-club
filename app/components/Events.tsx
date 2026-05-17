@@ -104,6 +104,10 @@ export default function Events({ events }: { events: Event[] }) {
   const [selectedEvent, setSelectedEvent] = useState<(typeof events)[0] | null>(null);
 
   useEffect(() => {
+    // Fallback — set visible after 500ms regardless
+    // Handles browser back navigation from cache
+    const fallback = setTimeout(() => setVisible(true), 500);
+
     // Intersection Observer watches the section
     // When it enters the viewport, we set visible to true
     // This triggers the CSS transition on each ticket
@@ -125,11 +129,15 @@ export default function Events({ events }: { events: Event[] }) {
       observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      clearTimeout(fallback);
+      observer.disconnect();
+    };
   }, []);
 
   return (
     <section
+      id="events"
       ref={sectionRef}
       className="snap-section flex flex-col justify-center px-8 md:px-16 py-16 gap-8"
       style={{

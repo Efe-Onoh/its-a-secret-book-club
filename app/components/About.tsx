@@ -44,7 +44,7 @@ export default function About() {
   return (
     // Section is 300vh tall — gives us 3 scroll lengths to work with
     // overflow-hidden prevents content from showing outside the sticky container
-    <section className="snap-section" ref={sectionRef} style={{ height: "300vh", background: "var(--color-about-bg)" }}>
+    <section id="about" className="snap-section" ref={sectionRef} style={{ height: "300vh", background: "var(--color-about-bg)" }}>
       {/* Sticky container — stays pinned to top while parent scrolls */}
       {/* This is the "camera" that never moves */}
       <div className="sticky top-0 flex items-center justify-center overflow-hidden" style={{ height: "100vh" }}>
