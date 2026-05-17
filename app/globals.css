@@ -38,7 +38,7 @@
 
 html {
   scroll-snap-type: y mandatory;
-  background: black;
+  overscroll-behavior: none;
 }
 
 body {
