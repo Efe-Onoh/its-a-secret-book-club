@@ -74,7 +74,7 @@ function RSVPContent({ eventId }: { eventId: string }) {
   }
 
   return (
-    <div className="min-h-screen h-full flex flex-col px-4 py-8" style={{ background: "var(--color-events-bg)" }}>
+    <div className="min-h-screen flex flex-col justify-center px-4 py-8" style={{ background: "var(--color-events-bg)" }}>
       {/* Back button */}
       <div className="w-full p-4 mb-4" style={{ color: "var(--color-events-ink)" }}>
         <a href="/" className="font-body text-xs uppercase tracking-widest text-gray-400 hover:text-black transition-colors no-underline">
