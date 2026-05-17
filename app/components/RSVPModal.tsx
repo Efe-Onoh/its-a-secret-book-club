@@ -86,11 +86,11 @@ export default function RSVPModal({ event, onClose }: { event: Event; onClose: (
             {/* Event details header */}
             <div className="flex flex-col md:flex-row gap-0">
               {/* Book cover */}
-              <div className="w-full md:w-48 flex-shrink-0 bg-gray-100">
+              <div className="w-full md:w-48 h-[15vh] md:h-auto flex-shrink-0 bg-gray-100">
                 <img
                   src={coverUrl}
                   alt={event.title}
-                  className="w-full h-[20vh] md:h-full object-cover md:rounded-l-2xl"
+                  className="w-full h-full md:h-full object-cover md:rounded-l-2xl"
                   onError={(e) => {
                     e.currentTarget.style.display = "none";
                   }}
@@ -98,7 +98,7 @@ export default function RSVPModal({ event, onClose }: { event: Event; onClose: (
               </div>
 
               {/* Event info */}
-              <div className="flex flex-col justify-between p-6 md:p-8 flex-1 bg-black text-white">
+              <div className="flex flex-col justify-between p-4 md:p-8 flex-1 bg-black text-white">
                 <div className="flex justify-between items-start">
                   <p className="font-body text-[8px] md:text-xs uppercase tracking-[0.2em] opacity-50">
                     {event.date} · {event.time}
@@ -109,7 +109,7 @@ export default function RSVPModal({ event, onClose }: { event: Event; onClose: (
                   </button>
                 </div>
                 <div className="flex flex-col gap-0 md:gap-2 ">
-                  <h2 className="font-display uppercase leading-none" style={{ fontSize: "clamp(20px, 3vw, 36px)", letterSpacing: "-0.02em" }}>
+                  <h2 className="font-display uppercase leading-none" style={{ fontSize: "clamp(16px, 3vw, 36px)", letterSpacing: "-0.02em" }}>
                     {event.title}
                   </h2>
                   <p className="font-body text-[10px] md:text-sm opacity-60">by {event.author}</p>
@@ -121,7 +121,7 @@ export default function RSVPModal({ event, onClose }: { event: Event; onClose: (
             </div>
 
             {/* Form */}
-            <form onSubmit={handleSubmit} className="flex flex-col gap-2 md:gap-4 p-4 md:p-8">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-1 md:gap-4 p-4 md:p-8">
               <h3 className="font-display uppercase leading-none" style={{ fontSize: "clamp(20px, 3vw, 32px)", letterSpacing: "-0.02em" }}>
                 Reserve your spot
               </h3>
@@ -135,8 +135,8 @@ export default function RSVPModal({ event, onClose }: { event: Event; onClose: (
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="w-full font-display uppercase px-8 py-8 mt-4 rounded-full bg-black text-white hover:opacity-80 transition-opacity disabled:opacity-40 disabled:cursor-not-allowed"
-                style={{ fontSize: "clamp(16px, 2vw, 22px)", letterSpacing: "-0.01em" }}
+                className="w-full font-display uppercase py-4 md:py-8 mt-4 rounded-full bg-black text-white hover:opacity-80 transition-opacity disabled:opacity-40 disabled:cursor-not-allowed"
+                style={{ fontSize: "clamp(11px, 2vw, 20px)", letterSpacing: "-0.01em" }}
               >
                 {status === "loading" ? "Confirming..." : "Confirm RSVP"}
               </button>
