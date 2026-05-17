@@ -145,7 +145,7 @@ export default function RSVPModal({ event, onClose }: { event: Event; onClose: (
             </div>
 
             {/* Form */}
-            <form onSubmit={handleSubmit} className="flex flex-col gap-1 md:gap-4 p-4 md:p-8">
+            <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center gap-1 md:gap-4 p-4 md:p-8">
               <h3 className="font-display uppercase leading-none" style={{ fontSize: "clamp(20px, 3vw, 32px)", letterSpacing: "-0.02em" }}>
                 Reserve your spot
               </h3>
