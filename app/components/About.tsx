@@ -53,7 +53,7 @@ export default function About() {
         <h2
           className="font-display uppercase text-center leading-none w-full px-4 absolute transition-all duration-700"
           style={{
-            fontSize: "clamp(40px, min(25vh, 20vw), 320px)",
+            fontSize: "clamp(40px, min(25vh, 30vw), 320px)",
             letterSpacing: "-0.04em",
             color: "var(--color-about-ink)",
             // When state moves past 0, slide WHO WE ARE to the left and fade out
