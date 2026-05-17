@@ -252,50 +252,6 @@ function Hero() {
   );
 }
 
-//dont need do we? here?
-// function About() {
-//   return (
-//     <section className="snap-section flex flex-col md:flex-row" style={{ background: "var(--color-about-bg)", color: "var(--color-about-ink)" }}>
-//       {/* Left — big label */}
-//       <div className="flex items-center justify-center md:w-1/2 p-16 border-b md:border-b-0 md:border-r" style={{ borderColor: "var(--color-about-ink)" }}>
-//         <h2 className="font-display uppercase leading-none" style={{ fontSize: "clamp(48px, 8vw, 120px)", letterSpacing: "-0.03em" }}>
-//           WHO
-//           <br />
-//           WE
-//           <br />
-//           ARE
-//         </h2>
-//       </div>
-
-//       {/* Right — text */}
-//       <div className="flex flex-col justify-center md:w-1/2 p-16 gap-8">
-//         <p className="font-body text-xl leading-relaxed" style={{ color: "var(--color-about-ink)", opacity: 0.7 }}>
-//           It's A Secret Book Club is a monthly reading group for people who take books seriously. No gatekeeping. No pretension. Just good readers and honest conversation.
-//         </p>
-//         <p className="font-body text-xl leading-relaxed" style={{ color: "var(--color-about-ink)", opacity: 0.7 }}>
-//           We meet in person in Dubai, keep groups small at 12 people maximum, and rotate through fiction that makes you think differently about the world.
-//         </p>
-//         <div className="grid grid-cols-3 gap-6 pt-8 border-t" style={{ borderColor: "var(--color-about-ink)" }}>
-//           {[
-//             { value: "12", label: "Members per session" },
-//             { value: "Monthly", label: "How often we meet" },
-//             { value: "Dubai", label: "Where we gather" },
-//           ].map(({ value, label }) => (
-//             <div key={label}>
-//               <div className="font-display text-3xl md:text-4xl uppercase" style={{ color: "var(--color-about-ink)" }}>
-//                 {value}
-//               </div>
-//               <div className="font-body text-xs uppercase tracking-widest mt-1" style={{ color: "var(--color-about-ink)", opacity: 0.4 }}>
-//                 {label}
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
 function CurrentBook() {
   return (
     <section className="snap-section flex flex-col items-center justify-center text-center px-8 md:px-24" style={{ background: "var(--color-currentbook-bg)", color: "var(--color-currentbook-ink)" }}>
@@ -317,63 +273,6 @@ function CurrentBook() {
     </section>
   );
 }
-
-// function Join() {
-//   return (
-//     <section id="join" className="snap-section flex flex-col md:flex-row" style={{ background: "var(--color-join-bg)", color: "var(--color-join-ink)" }}>
-//       {/* Left */}
-//       <div className="flex flex-col justify-center md:w-1/2 p-16 border-b md:border-b-0 md:border-r" style={{ borderColor: "var(--color-join-ink)" }}>
-//         <p className="font-body text-xs uppercase tracking-[0.4em] mb-6 opacity-70" style={{ color: "var(--color-join-ink)", opacity: 0.7 }}>
-//           Membership
-//         </p>
-//         <h2 className="font-display uppercase leading-none mb-8" style={{ color: "var(--color-join-ink)", opacity: 0.8, fontSize: "clamp(48px, 7vw, 100px)", letterSpacing: "-0.03em" }}>
-//           WANT
-//           <br />
-//           IN?
-//         </h2>
-//         <p className="font-body text-lg leading-relaxed opacity-80 max-w-sm" style={{ color: "var(--color-join-ink)", opacity: 0.8 }}>
-//           Sessions are free. Spots are limited to 12. Tell us a little about yourself and the book that changed you.
-//         </p>
-//       </div>
-
-//       {/* Right — form */}
-//       <JoinForm />
-//     </section>
-//   );
-// }
-// function JoinIntro() {
-//   return (
-//     <section className="snap-section flex flex-col items-center justify-center text-center px-8 md:px-24 gap-8" style={{ background: "var(--color-join-bg)", color: "var(--color-join-ink)" }}>
-//       <p className="font-body text-xs uppercase tracking-[0.4em]" style={{ opacity: 0.5 }}>
-//         Membership
-//       </p>
-//       <h2
-//         className="font-display uppercase leading-none"
-//         style={{
-//           fontSize: "clamp(60px, min(20vh, 18vw), 280px)",
-//           letterSpacing: "-0.03em",
-//         }}
-//       >
-//         WANT IN?
-//       </h2>
-//       <p className="font-body text-lg md:text-xl max-w-md leading-relaxed" style={{ opacity: 0.75 }}>
-//         Sessions are free. Just show up, grab a seat, and enjoy the conversation. Tell us a little about yourself below.
-//       </p>
-
-//       <a
-//         href="#join-form"
-//         className="font-display uppercase px-10 py-5 rounded-full border-2 transition-opacity duration-300 hover:opacity-70 no-underline"
-//         style={{
-//           fontSize: "clamp(16px, 2vw, 24px)",
-//           borderColor: "var(--color-join-ink)",
-//           color: "var(--color-join-ink)",
-//         }}
-//       >
-//         Join us
-//       </a>
-//     </section>
-//   );
-// }
 
 function JoinFormSection() {
   return (
