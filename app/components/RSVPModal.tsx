@@ -59,7 +59,7 @@ export default function RSVPModal({ event, onClose }: { event: Event; onClose: (
 
   const inputClass = `
     w-full bg-transparent border-b-2 border-black py-2
-    font-body text-base outline-none
+    font-body text-xs md:text-base outline-none
     placeholder:opacity-40 transition-all duration-200
     text-black
   `;
@@ -100,7 +100,7 @@ export default function RSVPModal({ event, onClose }: { event: Event; onClose: (
               {/* Event info */}
               <div className="flex flex-col justify-between p-6 md:p-8 flex-1 bg-black text-white">
                 <div className="flex justify-between items-start">
-                  <p className="font-body text-xs uppercase tracking-[0.2em] opacity-50">
+                  <p className="font-body text-[8px] md:text-xs uppercase tracking-[0.2em] opacity-50">
                     {event.date} · {event.time}
                   </p>
                   {/* Close button */}
@@ -108,20 +108,20 @@ export default function RSVPModal({ event, onClose }: { event: Event; onClose: (
                     ×
                   </button>
                 </div>
-                <div className="flex flex-col gap-2 ">
+                <div className="flex flex-col gap-0 md:gap-2 ">
                   <h2 className="font-display uppercase leading-none" style={{ fontSize: "clamp(20px, 3vw, 36px)", letterSpacing: "-0.02em" }}>
                     {event.title}
                   </h2>
-                  <p className="font-body text-sm opacity-60">by {event.author}</p>
-                  <p className="font-body text-sm opacity-50">{event.location}</p>
-                  <p className="font-body text-sm opacity-50">{event.spots} spots available</p>
+                  <p className="font-body text-[10px] md:text-sm opacity-60">by {event.author}</p>
+                  <p className="font-body text-[10px] md:text-sm opacity-50">{event.location}</p>
+                  <p className="font-body text-[10px] md:text-sm opacity-50">{event.spots} spots available</p>
                 </div>
-                <p className="font-body text-sm opacity-70 leading-relaxed mt-2 line-clamp-3">{event.description}</p>{" "}
+                <p className="font-body text-[10px] md:text-sm opacity-70 leading-relaxed mt-2 line-clamp-3">{event.description}</p>{" "}
               </div>
             </div>
 
             {/* Form */}
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4 p-6 md:p-8">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-2 md:gap-4 p-4 md:p-8">
               <h3 className="font-display uppercase leading-none" style={{ fontSize: "clamp(20px, 3vw, 32px)", letterSpacing: "-0.02em" }}>
                 Reserve your spot
               </h3>
@@ -135,7 +135,7 @@ export default function RSVPModal({ event, onClose }: { event: Event; onClose: (
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="w-full font-display uppercase px-8 py-8 mt-2 rounded-full bg-black text-white hover:opacity-80 transition-opacity disabled:opacity-40 disabled:cursor-not-allowed"
+                className="w-full font-display uppercase px-8 py-8 mt-4 rounded-full bg-black text-white hover:opacity-80 transition-opacity disabled:opacity-40 disabled:cursor-not-allowed"
                 style={{ fontSize: "clamp(16px, 2vw, 22px)", letterSpacing: "-0.01em" }}
               >
                 {status === "loading" ? "Confirming..." : "Confirm RSVP"}
