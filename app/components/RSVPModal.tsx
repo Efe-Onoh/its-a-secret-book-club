@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface Event {
   id: string;
@@ -20,6 +20,30 @@ export default function RSVPModal({ event, onClose }: { event: Event; onClose: (
   const [whatsapp, setWhatsapp] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    const inputs = document.querySelectorAll("input, textarea");
+
+    const disableSnap = () => {
+      document.documentElement.style.scrollSnapType = "none";
+    };
+
+    const enableSnap = () => {
+      document.documentElement.style.scrollSnapType = "y mandatory";
+    };
+
+    inputs.forEach((input) => {
+      input.addEventListener("focus", disableSnap);
+      input.addEventListener("blur", enableSnap);
+    });
+
+    return () => {
+      inputs.forEach((input) => {
+        input.removeEventListener("focus", disableSnap);
+        input.removeEventListener("blur", enableSnap);
+      });
+    };
+  }, []);
 
   const coverUrl = `https://covers.openlibrary.org/b/isbn/${event.isbn}-L.jpg`;
 
