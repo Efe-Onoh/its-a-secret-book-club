@@ -74,7 +74,7 @@ function RSVPContent({ eventId }: { eventId: string }) {
   }
 
   return (
-    <div className="min-h-screen bg-white flex flex-col px-4 py-8" style={{ background: "var(--color-events-bg)" }}>
+    <div className="min-h-screen flex flex-col px-4 py-8" style={{ background: "var(--color-events-bg)" }}>
       {/* Back button */}
       <div className="w-full p-4 mb-4" style={{ color: "var(--color-events-ink)" }}>
         <a href="/" className="font-body text-xs uppercase tracking-widest text-gray-400 hover:text-black transition-colors no-underline">
@@ -83,7 +83,7 @@ function RSVPContent({ eventId }: { eventId: string }) {
       </div>
 
       {/* Card — identical to the modal */}
-      <div className=" bg-white flex w-full rounded-3xl overflow-hidden" style={{ boxShadow: "0 24px 80px rgba(0,0,0,0.2)" }}>
+      <div className=" bg-white flex flex-col md:flex-row w-full rounded-3xl overflow-hidden" style={{ boxShadow: "0 24px 80px rgba(0,0,0,0.2)" }}>
         {/* Event details header */}
         <div className="flex flex-col flex-1 md:flex-row gap-0">
           {/* Book cover */}
