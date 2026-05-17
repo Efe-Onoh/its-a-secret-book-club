@@ -38,7 +38,7 @@
 
 html {
   scroll-snap-type: y mandatory;
-  background: var(--color-bg);
+  background: black;
 }
 
 body {
