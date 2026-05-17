@@ -90,7 +90,7 @@ export default function RSVPModal({ event, onClose }: { event: Event; onClose: (
                 <img
                   src={coverUrl}
                   alt={event.title}
-                  className="w-full h-[200] md:h-full object-cover md:rounded-l-2xl"
+                  className="w-full h-[20vh] md:h-full object-cover md:rounded-l-2xl"
                   onError={(e) => {
                     e.currentTarget.style.display = "none";
                   }}
