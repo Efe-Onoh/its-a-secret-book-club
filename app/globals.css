@@ -66,8 +66,7 @@ h3 {
 
 .snap-section {
   scroll-snap-align: start;
-  min-height: 100vh;
-  /* min-height: 100dvh; */
+  min-height: 120vh;
   width: 100%;
 }
 
